@@ -2,6 +2,7 @@ package cn.sx.ebj.bidding.common.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StringUtils;
 
 /**
  * @name: 字符工具类
@@ -9,7 +10,7 @@ import org.slf4j.LoggerFactory;
  * @date: 2022-11-19 13:08
  **/
 
-public class StrUtils {
+public class StrUtils extends StringUtils {
 
     private static Logger log = LoggerFactory.getLogger(StrUtils.class);
 
