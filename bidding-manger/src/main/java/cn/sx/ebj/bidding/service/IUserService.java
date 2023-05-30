@@ -1,5 +1,7 @@
 package cn.sx.ebj.bidding.service;
 
+import cn.sx.ebj.bidding.model.UserModel;
+
 /**
  * 用户service接口
  *
@@ -9,4 +11,6 @@ package cn.sx.ebj.bidding.service;
  **/
 
 public interface IUserService {
+
+    UserModel getUserByName(String name);
 }

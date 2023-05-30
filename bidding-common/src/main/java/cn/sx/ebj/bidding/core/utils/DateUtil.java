@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.common.utils;
+package cn.sx.ebj.bidding.core.utils;
 
 /**
  * 日期类工具
@@ -7,5 +7,5 @@ package cn.sx.ebj.bidding.common.utils;
  * @date: 2022-11-12 21:18
  **/
 
-public class DateUtils {
+public class DateUtil {
 }

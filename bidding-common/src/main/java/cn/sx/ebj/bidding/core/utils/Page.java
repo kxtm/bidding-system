@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.common.data;
+package cn.sx.ebj.bidding.core.utils;
 
 import java.io.Serializable;
 import java.util.List;

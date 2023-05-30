@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.vo;
+package cn.sx.ebj.bidding.model;
 
 /**
  * @name: 树数据模型

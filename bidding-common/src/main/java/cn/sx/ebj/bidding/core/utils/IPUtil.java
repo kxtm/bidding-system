@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.common.utils;
+package cn.sx.ebj.bidding.core.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,8 +12,8 @@ import java.net.InetAddress;
  * @date: 2022-11-13 01:37
  **/
 
-public class IPUtils {
-    protected static Logger log= LoggerFactory.getLogger(IPUtils.class);
+public class IPUtil {
+    protected static Logger log= LoggerFactory.getLogger(IPUtil.class);
     public static String getIpAddr(HttpServletRequest request) {
 
         String ip = request.getHeader("x-forwarded-for");

@@ -1,7 +1,6 @@
-package cn.sx.ebj.bidding.common.utils;
+package cn.sx.ebj.bidding.core.utils;
 
 import org.springframework.util.FileCopyUtils;
-import org.springframework.util.FileSystemUtils;
 
 import java.io.File;
 
@@ -13,7 +12,7 @@ import java.io.File;
  * @date: 2022-11-12 21:17
  **/
 
-public class FileUtils extends FileCopyUtils {
+public class FileUtil extends FileCopyUtils {
 
     /**
      * 判断文件是否存在

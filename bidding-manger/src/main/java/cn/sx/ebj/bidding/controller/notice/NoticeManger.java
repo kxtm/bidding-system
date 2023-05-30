@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.controller.notice;
 
-import cn.sx.ebj.bidding.common.core.IController;
+import cn.sx.ebj.bidding.core.base.IController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 

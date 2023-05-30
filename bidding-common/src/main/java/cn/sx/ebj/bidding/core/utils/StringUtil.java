@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.common.utils;
+package cn.sx.ebj.bidding.core.utils;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,9 +10,9 @@ import org.springframework.util.StringUtils;
  * @date: 2022-11-19 13:08
  **/
 
-public class StrUtils extends StringUtils {
+public class StringUtil extends StringUtils {
 
-    private static Logger log = LoggerFactory.getLogger(StrUtils.class);
+    private static Logger log = LoggerFactory.getLogger(StringUtil.class);
 
 
     /**
