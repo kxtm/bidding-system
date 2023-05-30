@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date: 2022-11-19 01:12
  **/
 @Configuration
-public class MangerInterceptor implements HandlerInterceptor {
+public class SecurityConfig implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
