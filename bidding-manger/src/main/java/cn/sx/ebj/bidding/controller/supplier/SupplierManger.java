@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.controller.supplier;
 
-import cn.sx.ebj.bidding.common.core.BaseController;
+import cn.sx.ebj.bidding.common.core.IController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,5 +11,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @Controller
 @RequestMapping("/supplier")
-public class SupplierManger extends BaseController {
+public class SupplierManger extends IController {
 }

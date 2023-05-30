@@ -10,13 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 控制器基类
  *
- * @name: BaseController
+ * @name: 控制器基类
  * @author: chunjie
  * @date: 2022-11-12 18:57
  **/
 
-public abstract class BaseController {
-    protected Logger log = LoggerFactory.getLogger(BaseController.class);
+public abstract class IController {
+    protected Logger log = LoggerFactory.getLogger(this.getClass());
     @Resource
     protected HttpServletRequest request;
 

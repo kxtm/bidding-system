@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.controller.project;
 
-import cn.sx.ebj.bidding.common.core.BaseController;
+import cn.sx.ebj.bidding.common.core.IController;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @Controller
 @RequestMapping("/project")
-public class ProjectManger extends BaseController {
+public class ProjectManger extends IController {
     @RequestMapping("/list")
     public String projectList(ModelMap map) {
 

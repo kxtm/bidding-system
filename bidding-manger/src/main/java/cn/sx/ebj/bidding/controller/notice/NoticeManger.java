@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.controller.notice;
 
-import cn.sx.ebj.bidding.common.core.BaseController;
+import cn.sx.ebj.bidding.common.core.IController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  **/
 @Controller
 @RequestMapping(value = "/notice")
-public class NoticeManger extends BaseController {
+public class NoticeManger extends IController {
 
 
 }
