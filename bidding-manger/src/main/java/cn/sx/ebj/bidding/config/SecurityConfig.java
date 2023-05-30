@@ -1,6 +1,5 @@
 package cn.sx.ebj.bidding.config;
 
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
  * @author: chunjie
  * @date: 2022-11-19 01:12
  **/
-@Configuration
 public class SecurityConfig implements HandlerInterceptor {
 
     @Override
