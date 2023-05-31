@@ -1,18 +1,23 @@
-package cn.sx.ebj.bidding.config;
+package cn.sx.ebj.biding.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/**
+ * @name: MallConfig
+ * @author: chunjie
+ * @date: 2022-11-16 22:34
+ **/
 @Configuration
-public class WebConfig implements WebMvcConfigurer {
+public class MallWebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedHeaders("*")
-                .allowedMethods("*")
+                .allowCredentials(true)
                 .allowedOriginPatterns("*")
-                .allowCredentials(true);
+                .allowedMethods("*")
+                .allowedHeaders("*");
     }
 }

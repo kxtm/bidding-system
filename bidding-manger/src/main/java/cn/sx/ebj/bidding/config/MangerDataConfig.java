@@ -1,10 +1,15 @@
-package cn.sx.ebj.biding.config;
+package cn.sx.ebj.bidding.config;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.context.request.WebRequestInterceptor;
 
-public class DataConfig implements WebRequestInterceptor {
+public class MangerDataConfig implements WebRequestInterceptor {
+    
+    final static Logger log = LoggerFactory.getLogger(MangerDataConfig.class);
+
     @Override
     public void preHandle(WebRequest request) throws Exception {
 
