@@ -1,5 +1,8 @@
 package cn.sx.ebj.bidding.service.impl;
 
+import cn.sx.ebj.bidding.core.annotation.SysLog;
+import cn.sx.ebj.bidding.core.enums.Modules;
+import cn.sx.ebj.bidding.core.enums.OperType;
 import cn.sx.ebj.bidding.data.dao.UserMapper;
 import cn.sx.ebj.bidding.data.entity.User;
 import cn.sx.ebj.bidding.model.UserModel;
@@ -20,6 +23,7 @@ public class UserServiceImpl implements IUserService {
     private UserMapper userDao;
 
     @Override
+    @SysLog(module = Modules.CGGL,desc = "用户名查询用户",type = OperType.QUERY)
     public UserModel getUserByName(String name) {
         User user= userDao.selectUser("1");
 

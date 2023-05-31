@@ -24,7 +24,7 @@ public class LogAspect {
     static final Logger log = LoggerFactory.getLogger(LogAspect.class);
 
     @Before(value = "@annotation(sysLog)")
-    public void boBefore(JoinPoint joinPoint, SysLog sysLog) {
+    public void Before(JoinPoint joinPoint, SysLog sysLog) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest req = attributes.getRequest();
         log.info("功能模块:{},{}", sysLog.module().getType(),sysLog.type().getDesc());
@@ -41,7 +41,7 @@ public class LogAspect {
      * @param joinPoint 切点
      */
     @AfterReturning(pointcut = "@annotation(sysLog)", returning = "jsonResult")
-    public void doAfter(JoinPoint joinPoint, SysLog sysLog, Object jsonResult) {
+    public void After(JoinPoint joinPoint, SysLog sysLog, Object jsonResult) {
         log.info("功能模块:{}", sysLog.desc());
         log.info("返回数据:{}", jsonResult);
     }
@@ -53,7 +53,7 @@ public class LogAspect {
      * @param e         异常
      */
     @AfterThrowing(value = "@annotation(sysLog)", throwing = "e")
-    public void doAfterThrowing(JoinPoint joinPoint, SysLog sysLog, Exception e) {
+    public void throwing(JoinPoint joinPoint, SysLog sysLog, Exception e) {
         log.info("功能模块:{}", sysLog.desc());
         log.error("{}.{}处理异常:{},", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName(), e);
     }
