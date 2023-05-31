@@ -27,7 +27,7 @@ public class LogAspect {
     public void boBefore(JoinPoint joinPoint, SysLog sysLog) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest req = attributes.getRequest();
-        log.info("功能模块:{}", sysLog.desc());
+        log.info("功能模块:{},{}", sysLog.module().getType(),sysLog.type().getDesc());
         log.info("请求来源:{},{}", req.getRemoteAddr(), IPUtil.getIpAddr(req));
         log.info("请求URL:{}", req.getRequestURL().toString());
         log.info("请求方式:{}", req.getMethod());

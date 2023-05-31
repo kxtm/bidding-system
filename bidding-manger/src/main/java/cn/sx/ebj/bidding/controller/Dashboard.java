@@ -2,6 +2,8 @@ package cn.sx.ebj.bidding.controller;
 
 import cn.sx.ebj.bidding.core.annotation.SysLog;
 import cn.sx.ebj.bidding.core.base.IController;
+import cn.sx.ebj.bidding.core.enums.Modules;
+import cn.sx.ebj.bidding.core.enums.OperType;
 import cn.sx.ebj.bidding.core.utils.ConvertUtil;
 import cn.sx.ebj.bidding.core.utils.Page;
 import cn.sx.ebj.bidding.core.utils.R;
@@ -23,12 +25,12 @@ public class Dashboard extends IController {
     private IUserService userService;
 
     @GetMapping(value = {"", "/"})
-    @SysLog(func = "首页", desc = "首页")
+    @SysLog(module = Modules.CGGL, func = "首页", desc = "首页", type = OperType.QUERY)
     public String index(WebRequest request, HttpSession session) {
         session.setAttribute("aa", "22");
         log.info("首页->{}", ConvertUtil.toStr(null));
         request.setAttribute("b", "11", RequestAttributes.SCOPE_REQUEST);
-       UserModel userModel=userService.getUserByName("1");
+        UserModel userModel = userService.getUserByName("1");
         return "index";
     }
 
