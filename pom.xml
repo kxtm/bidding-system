@@ -13,6 +13,7 @@
 		<module>bidding-supplier</module>
         <module>bidding-common</module>
         <module>bidding-mall</module>
+        <module>bidding-external</module>
     </modules>
 	<groupId>cn.sx.ebj.bidding</groupId>
 	<artifactId>bidding-system</artifactId>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <!-- 日志存放路径 -->
-    <property name="log.path" value="E:/Code/idea/bidding-system/logs" />
+    <property name="log.path" value="./logs" />
     <!-- 日志输出格式 -->
     <property name="log.pattern" value="%d{HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n" />
 
@@ -14,11 +14,11 @@
 
     <!-- 系统日志输出 -->
     <appender name="info" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/project-info.log</file>
+        <file>${log.path}/mall-info.log</file>
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>${log.path}/project-info.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${log.path}/sys-info.%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- 日志最大的历史 60天 -->
             <maxHistory>60</maxHistory>
         </rollingPolicy>
@@ -36,11 +36,11 @@
     </appender>
 
     <appender name="error" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>${log.path}/project-error.log</file>
+        <file>${log.path}/sys-error.log</file>
         <!-- 循环政策：基于时间创建日志文件 -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- 日志文件名格式 -->
-            <fileNamePattern>${log.path}/project-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <fileNamePattern>${log.path}/mall-error.%d{yyyy-MM-dd}.log</fileNamePattern>
             <!-- 日志最大的历史 60天 -->
             <maxHistory>60</maxHistory>
         </rollingPolicy>
