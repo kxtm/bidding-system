@@ -6,7 +6,7 @@ import cn.sx.ebj.bidding.core.enums.Modules;
 import cn.sx.ebj.bidding.core.enums.OperType;
 import cn.sx.ebj.bidding.core.utils.ConvertUtil;
 import cn.sx.ebj.bidding.core.utils.Page;
-import cn.sx.ebj.bidding.core.utils.R;
+import cn.sx.ebj.bidding.core.utils.Result;
 import cn.sx.ebj.bidding.model.UserModel;
 import cn.sx.ebj.bidding.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,10 +36,10 @@ public class Dashboard extends IController {
 
     @GetMapping("test")
     @ResponseBody
-    public R<String> getIndex() {
+    public Result<String> getIndex() {
         Page<Object> d = Page.init();
         d.setTotalRecord(65);
-        return R.SUCCESS(d.getTotalPage() + "");
+        return Result.SUCCESS(d.getTotalPage() + "");
     }
 
 

@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @date: 2022-11-12 19:30
  **/
 
-public class R<T> implements Serializable {
+public class Result<T> implements Serializable {
     //成功 true 失败 false
     private boolean code;
     //消息
@@ -19,7 +19,7 @@ public class R<T> implements Serializable {
     //数据
     private T data;
 
-    public R(boolean code, String msg, T data) {
+    public Result(boolean code, String msg, T data) {
         this.code = code;
         this.msg = msg;
         this.data = data;
@@ -34,9 +34,9 @@ public class R<T> implements Serializable {
      * @param <T>  对象类型
      * @return R
      */
-    public static <T> R SUCCESS(String msg, T data) {
+    public static <T> Result SUCCESS(String msg, T data) {
 
-        return new R(true, msg, data);
+        return new Result(true, msg, data);
     }
 
     /**
@@ -47,8 +47,8 @@ public class R<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> R FAIL(String msg, T data) {
-        return new R(false, msg, data);
+    public static <T> Result FAIL(String msg, T data) {
+        return new Result(false, msg, data);
     }
 
 
@@ -59,9 +59,9 @@ public class R<T> implements Serializable {
      * @param <T> 对象类型
      * @return R
      */
-    public static <T> R SUCCESS(String msg) {
+    public static <T> Result SUCCESS(String msg) {
 
-        return new R(true, msg, null);
+        return new Result(true, msg, null);
     }
 
     /**
@@ -71,8 +71,8 @@ public class R<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> R FAIL(String msg) {
-        return new R(false, msg, null);
+    public static <T> Result FAIL(String msg) {
+        return new Result(false, msg, null);
     }
 
     public boolean isCode() {
