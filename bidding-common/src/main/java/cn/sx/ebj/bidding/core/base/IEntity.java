@@ -9,7 +9,8 @@ import java.util.Date;
 public abstract class IEntity implements Serializable {
     //序号主键
     private Long id;
-
+    //业务主键
+    private String biz;
     //创建人业务主键
     private String createPk;
     //创建人业务名称
@@ -31,6 +32,9 @@ public abstract class IEntity implements Serializable {
         this.id = id;
     }
 
+    public String getBiz() { return biz; }
+
+    public void setBiz(String biz) { this.biz = biz; }
     public String getCreatePk() {
         return createPk;
     }
