@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.core.aspect;
+package cn.sx.ebj.bidding.core.config;
 
 import cn.sx.ebj.bidding.core.annotation.SysLog;
 import cn.sx.ebj.bidding.core.utils.IPUtil;
