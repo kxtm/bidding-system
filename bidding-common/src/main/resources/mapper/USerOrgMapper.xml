@@ -21,34 +21,16 @@
     ID, EMP_ID, ORG_ID, ORG_Name, USE_TYPE, USE_STATE, ORG_SEQ, ORG_SEQ_CH, Create_Pk, 
     Create_By, Modify_Pk, Modify_By, Create_Time, Modify_Time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from sys_user_org
-    where ID = #{id,jdbcType=BIGINT}
+  <select id="selectByEmpId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from sys_user_org  where EMP_ID = #{empId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from sys_user_org
-    where ID = #{id,jdbcType=BIGINT}
+  <delete id="deleteByEmpId" parameterType="java.lang.String" >
+    delete from sys_user_org where EMP_ID = #{empId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
-    insert into sys_user_org (ID, EMP_ID, ORG_ID, 
-      ORG_Name, USE_TYPE, USE_STATE, 
-      ORG_SEQ, ORG_SEQ_CH, Create_Pk, 
-      Create_By, Modify_Pk, Modify_By, 
-      Create_Time, Modify_Time)
-    values (#{id,jdbcType=BIGINT}, #{empId,jdbcType=VARCHAR}, #{orgId,jdbcType=VARCHAR}, 
-      #{orgName,jdbcType=VARCHAR}, #{useType,jdbcType=INTEGER}, #{useState,jdbcType=INTEGER}, 
-      #{orgSeq,jdbcType=VARCHAR}, #{orgSeqCh,jdbcType=VARCHAR}, #{createPk,jdbcType=VARCHAR}, 
-      #{createBy,jdbcType=VARCHAR}, #{modifyPk,jdbcType=VARCHAR}, #{modifyBy,jdbcType=VARCHAR}, 
-      #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP})
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
     insert into sys_user_org
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        ID,
-      </if>
+
       <if test="empId != null" >
         EMP_ID,
       </if>
@@ -90,9 +72,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="empId != null" >
         #{empId,jdbcType=VARCHAR},
       </if>
@@ -134,12 +113,9 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
+  <update id="updateByEmpId" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
     update sys_user_org
     <set >
-      <if test="empId != null" >
-        EMP_ID = #{empId,jdbcType=VARCHAR},
-      </if>
       <if test="orgId != null" >
         ORG_ID = #{orgId,jdbcType=VARCHAR},
       </if>
@@ -177,23 +153,7 @@
         Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where ID = #{id,jdbcType=BIGINT}
+    where EMP_ID = #{empId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
-    update sys_user_org
-    set EMP_ID = #{empId,jdbcType=VARCHAR},
-      ORG_ID = #{orgId,jdbcType=VARCHAR},
-      ORG_Name = #{orgName,jdbcType=VARCHAR},
-      USE_TYPE = #{useType,jdbcType=INTEGER},
-      USE_STATE = #{useState,jdbcType=INTEGER},
-      ORG_SEQ = #{orgSeq,jdbcType=VARCHAR},
-      ORG_SEQ_CH = #{orgSeqCh,jdbcType=VARCHAR},
-      Create_Pk = #{createPk,jdbcType=VARCHAR},
-      Create_By = #{createBy,jdbcType=VARCHAR},
-      Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
-      Modify_By = #{modifyBy,jdbcType=VARCHAR},
-      Create_Time = #{createTime,jdbcType=TIMESTAMP},
-      Modify_Time = #{modifyTime,jdbcType=TIMESTAMP}
-    where ID = #{id,jdbcType=BIGINT}
-  </update>
+
 </mapper>

@@ -26,7 +26,6 @@ public class UserServiceImpl implements IUserService {
     @SysLog(module = Modules.CGGL,desc = "用户名查询用户",type = OperType.QUERY)
     public UserModel getUserByName(String name) {
 
-
         return new UserModel();
     }
 

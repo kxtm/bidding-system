@@ -5,15 +5,12 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface OrgMapper {
-    int deleteByPrimaryKey(Long id);
+
+    int deleteByOrgId(String orgId);
 
     int insert(Org record);
 
-    int insertSelective(Org record);
+    Org selectByOrgId(String orgId);
 
-    Org selectByPrimaryKey(Long id);
-
-    int updateByPrimaryKeySelective(Org record);
-
-    int updateByPrimaryKey(Org record);
+    int updateByOrgId(Org record);
 }

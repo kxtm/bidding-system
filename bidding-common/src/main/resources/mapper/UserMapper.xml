@@ -29,40 +29,15 @@
     EMP_phone, EMP_email, EMP_State, EMP_Sort, OPER_TYPE, REMARK, Create_Pk, Create_By, 
     Modify_Pk, Modify_By, Create_Time, Modify_Time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from sys_user
-    where ID = #{id,jdbcType=BIGINT}
+  <select id="selectByEmpId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from sys_user  where EMP_ID = #{empId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from sys_user
-    where ID = #{id,jdbcType=BIGINT}
+  <delete id="deleteByEmpId" parameterType="java.lang.Long" >
+    delete from sys_user where EMP_ID = #{empId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.User" >
-    insert into sys_user (ID, EMP_ID, EMP_Code, 
-      EMP_Name, EMP_Pwd, EMP_Sex, 
-      EMP_level, EMP_type, EMP_mobile, 
-      EMP_phone, EMP_email, EMP_State, 
-      EMP_Sort, OPER_TYPE, REMARK, 
-      Create_Pk, Create_By, Modify_Pk, 
-      Modify_By, Create_Time, Modify_Time
-      )
-    values (#{id,jdbcType=BIGINT}, #{empId,jdbcType=VARCHAR}, #{empCode,jdbcType=VARCHAR}, 
-      #{empName,jdbcType=VARCHAR}, #{empPwd,jdbcType=VARCHAR}, #{empSex,jdbcType=INTEGER}, 
-      #{empLevel,jdbcType=INTEGER}, #{empType,jdbcType=INTEGER}, #{empMobile,jdbcType=VARCHAR}, 
-      #{empPhone,jdbcType=VARCHAR}, #{empEmail,jdbcType=VARCHAR}, #{empState,jdbcType=INTEGER}, 
-      #{empSort,jdbcType=INTEGER}, #{operType,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, 
-      #{createPk,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{modifyPk,jdbcType=VARCHAR}, 
-      #{modifyBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sx.ebj.bidding.data.entity.User" >
     insert into sys_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        ID,
-      </if>
       <if test="empId != null" >
         EMP_ID,
       </if>
@@ -125,9 +100,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="empId != null" >
         #{empId,jdbcType=VARCHAR},
       </if>
@@ -190,7 +162,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sx.ebj.bidding.data.entity.User" >
+  <update id="updateByEmpId" parameterType="cn.sx.ebj.bidding.data.entity.User" >
     update sys_user
     <set >
       <if test="empId != null" >
@@ -254,30 +226,6 @@
         Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where ID = #{id,jdbcType=BIGINT}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sx.ebj.bidding.data.entity.User" >
-    update sys_user
-    set EMP_ID = #{empId,jdbcType=VARCHAR},
-      EMP_Code = #{empCode,jdbcType=VARCHAR},
-      EMP_Name = #{empName,jdbcType=VARCHAR},
-      EMP_Pwd = #{empPwd,jdbcType=VARCHAR},
-      EMP_Sex = #{empSex,jdbcType=INTEGER},
-      EMP_level = #{empLevel,jdbcType=INTEGER},
-      EMP_type = #{empType,jdbcType=INTEGER},
-      EMP_mobile = #{empMobile,jdbcType=VARCHAR},
-      EMP_phone = #{empPhone,jdbcType=VARCHAR},
-      EMP_email = #{empEmail,jdbcType=VARCHAR},
-      EMP_State = #{empState,jdbcType=INTEGER},
-      EMP_Sort = #{empSort,jdbcType=INTEGER},
-      OPER_TYPE = #{operType,jdbcType=INTEGER},
-      REMARK = #{remark,jdbcType=VARCHAR},
-      Create_Pk = #{createPk,jdbcType=VARCHAR},
-      Create_By = #{createBy,jdbcType=VARCHAR},
-      Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
-      Modify_By = #{modifyBy,jdbcType=VARCHAR},
-      Create_Time = #{createTime,jdbcType=TIMESTAMP},
-      Modify_Time = #{modifyTime,jdbcType=TIMESTAMP}
-    where ID = #{id,jdbcType=BIGINT}
+    where EMP_ID = #{empId,jdbcType=VARCHAR}
   </update>
 </mapper>

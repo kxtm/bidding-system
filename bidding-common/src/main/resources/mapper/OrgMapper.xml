@@ -36,44 +36,15 @@
     ORG_CITY_ID, ORG_CITY_NAME, ORG_County_ID, ORG_County_name, ORG_SEQ, ORG_SEQ_CH, 
     Create_Pk, Create_By, Modify_Pk, Modify_By, Create_Time, Modify_Time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
-    select 
-    <include refid="Base_Column_List" />
-    from sys_org
-    where ID = #{id,jdbcType=BIGINT}
+  <select id="selectByOrgId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select  <include refid="Base_Column_List" />  from sys_org  where ORG_ID = #{orgId,jdbcType=VARCHAR}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
-    delete from sys_org
-    where ID = #{id,jdbcType=BIGINT}
+  <delete id="deleteByOrgId" parameterType="java.lang.String" >
+    delete from sys_org  where ORG_ID = #{orgId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
-    insert into sys_org (ID, ORG_ID, ORG_CODE, 
-      ORG_NAME, ORG_SHORT_NAME, ORG_PARENT_ID, 
-      ORG_TYPE, ORG_LEVEL, ORG_SORT, 
-      ORG_STATUS, Remark, ORG_CORP_ID, 
-      ORG_CORP_NAME, ORG_BRANCH_ID, ORG_BRANCH_NAME, 
-      ORG_CITY_ID, ORG_CITY_NAME, ORG_County_ID, 
-      ORG_County_name, ORG_SEQ, ORG_SEQ_CH, 
-      Create_Pk, Create_By, Modify_Pk, 
-      Modify_By, Create_Time, Modify_Time
-      )
-    values (#{id,jdbcType=BIGINT}, #{orgId,jdbcType=VARCHAR}, #{orgCode,jdbcType=VARCHAR}, 
-      #{orgName,jdbcType=VARCHAR}, #{orgShortName,jdbcType=VARCHAR}, #{orgParentId,jdbcType=VARCHAR}, 
-      #{orgType,jdbcType=INTEGER}, #{orgLevel,jdbcType=INTEGER}, #{orgSort,jdbcType=INTEGER}, 
-      #{orgStatus,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{orgCorpId,jdbcType=VARCHAR}, 
-      #{orgCorpName,jdbcType=VARCHAR}, #{orgBranchId,jdbcType=VARCHAR}, #{orgBranchName,jdbcType=VARCHAR}, 
-      #{orgCityId,jdbcType=VARCHAR}, #{orgCityName,jdbcType=VARCHAR}, #{orgCountyId,jdbcType=VARCHAR}, 
-      #{orgCountyName,jdbcType=VARCHAR}, #{orgSeq,jdbcType=VARCHAR}, #{orgSeqCh,jdbcType=VARCHAR}, 
-      #{createPk,jdbcType=VARCHAR}, #{createBy,jdbcType=VARCHAR}, #{modifyPk,jdbcType=VARCHAR}, 
-      #{modifyBy,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{modifyTime,jdbcType=TIMESTAMP}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
     insert into sys_org
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        ID,
-      </if>
       <if test="orgId != null" >
         ORG_ID,
       </if>
@@ -154,9 +125,6 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=BIGINT},
-      </if>
       <if test="orgId != null" >
         #{orgId,jdbcType=VARCHAR},
       </if>
@@ -237,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
+  <update id="updateByOrgId" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
     update sys_org
     <set >
       <if test="orgId != null" >
@@ -319,36 +287,7 @@
         Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where ID = #{id,jdbcType=BIGINT}
+    where ORG_ID = #{orgId,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
-    update sys_org
-    set ORG_ID = #{orgId,jdbcType=VARCHAR},
-      ORG_CODE = #{orgCode,jdbcType=VARCHAR},
-      ORG_NAME = #{orgName,jdbcType=VARCHAR},
-      ORG_SHORT_NAME = #{orgShortName,jdbcType=VARCHAR},
-      ORG_PARENT_ID = #{orgParentId,jdbcType=VARCHAR},
-      ORG_TYPE = #{orgType,jdbcType=INTEGER},
-      ORG_LEVEL = #{orgLevel,jdbcType=INTEGER},
-      ORG_SORT = #{orgSort,jdbcType=INTEGER},
-      ORG_STATUS = #{orgStatus,jdbcType=INTEGER},
-      Remark = #{remark,jdbcType=VARCHAR},
-      ORG_CORP_ID = #{orgCorpId,jdbcType=VARCHAR},
-      ORG_CORP_NAME = #{orgCorpName,jdbcType=VARCHAR},
-      ORG_BRANCH_ID = #{orgBranchId,jdbcType=VARCHAR},
-      ORG_BRANCH_NAME = #{orgBranchName,jdbcType=VARCHAR},
-      ORG_CITY_ID = #{orgCityId,jdbcType=VARCHAR},
-      ORG_CITY_NAME = #{orgCityName,jdbcType=VARCHAR},
-      ORG_County_ID = #{orgCountyId,jdbcType=VARCHAR},
-      ORG_County_name = #{orgCountyName,jdbcType=VARCHAR},
-      ORG_SEQ = #{orgSeq,jdbcType=VARCHAR},
-      ORG_SEQ_CH = #{orgSeqCh,jdbcType=VARCHAR},
-      Create_Pk = #{createPk,jdbcType=VARCHAR},
-      Create_By = #{createBy,jdbcType=VARCHAR},
-      Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
-      Modify_By = #{modifyBy,jdbcType=VARCHAR},
-      Create_Time = #{createTime,jdbcType=TIMESTAMP},
-      Modify_Time = #{modifyTime,jdbcType=TIMESTAMP}
-    where ID = #{id,jdbcType=BIGINT}
-  </update>
+
 </mapper>
