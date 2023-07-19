@@ -25,7 +25,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     @SysLog(module = Modules.CGGL,desc = "用户名查询用户",type = OperType.QUERY)
     public UserModel getUserByName(String name) {
-        User user= userDao.selectUser("1");
+
 
         return new UserModel();
     }

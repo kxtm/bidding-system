@@ -2,10 +2,18 @@ package cn.sx.ebj.bidding.data.dao;
 
 import cn.sx.ebj.bidding.data.entity.User;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
-    @Select("select * from t_user where name=#{name}")
-    User selectUser(String name);
+    int deleteByPrimaryKey(Long id);
+
+    int insert(User record);
+
+    int insertSelective(User record);
+
+    User selectByPrimaryKey(Long id);
+
+    int updateByPrimaryKeySelective(User record);
+
+    int updateByPrimaryKey(User record);
 }
