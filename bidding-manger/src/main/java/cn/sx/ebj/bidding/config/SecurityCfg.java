@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.core.config;
+package cn.sx.ebj.bidding.config;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author: chunjie
  * @date: 2022-11-19 01:12
  **/
-public class SecurityConfig implements HandlerInterceptor {
+public class SecurityCfg implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
