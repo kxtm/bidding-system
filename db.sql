@@ -8,16 +8,16 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_auth`;
 CREATE TABLE `sys_auth`  (
-                             `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Âß¼­Ö÷¼üÎŞÒâÒå',
-                             `EMP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ÓÃ»§´úÂë',
-                             `ROLE_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '½ÇÉ«´úÂë',
-                             `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '»ú¹¹´úÂë',
-                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                             `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                             `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'é€»è¾‘ä¸»é”®æ— æ„ä¹‰',
+                             `EMP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'ç”¨æˆ·ä»£ç ',
+                             `ROLE_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'è§’è‰²ä»£ç ',
+                             `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æœºæ„ä»£ç ',
+                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                             `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                              PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -31,21 +31,21 @@ CREATE TABLE `sys_auth`  (
 DROP TABLE IF EXISTS `sys_menu`;
 CREATE TABLE `sys_menu`  (
                              `id` bigint(20) NOT NULL AUTO_INCREMENT,
-                             `MENU_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '²Ëµ¥ID',
-                             `MENU_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '²Ëµ¥Ãû³Æ',
-                             `MENU_PARENT_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '¸¸²Ëµ¥ID',
-                             `MENU_TYPE` int(1) NULL DEFAULT NULL COMMENT '²Ëµ¥ÀàĞÍ £¨0Ä¿Â¼ 1²Ëµ¥ 2°´Å¥£©',
-                             `MENU_LEVEL` int(1) NULL DEFAULT NULL COMMENT '²Ëµ¥¼¶±ğ 1¼¶ 2¼¶ 3¼¶',
-                             `MENU_URL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '²Ëµ¥URL',
-                             `MENU_Auth` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '²Ëµ¥È¨ÏŞ',
-                             `MENU_STATE` int(1) NULL DEFAULT NULL COMMENT '²Ëµ¥×´Ì¬ 0½ûÓÃ 1Õı³£',
-                             `MENU_SORT` int(11) NULL DEFAULT NULL COMMENT '²Ëµ¥ĞòºÅ',
-                             `REMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '²Ëµ¥±¸×¢',
-                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                             `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                             `MENU_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'èœå•ID',
+                             `MENU_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'èœå•åç§°',
+                             `MENU_PARENT_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'çˆ¶èœå•ID',
+                             `MENU_TYPE` int(1) NULL DEFAULT NULL COMMENT 'èœå•ç±»å‹ ï¼ˆ0ç›®å½• 1èœå• 2æŒ‰é’®ï¼‰',
+                             `MENU_LEVEL` int(1) NULL DEFAULT NULL COMMENT 'èœå•çº§åˆ« 1çº§ 2çº§ 3çº§',
+                             `MENU_URL` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'èœå•URL',
+                             `MENU_Auth` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'èœå•æƒé™',
+                             `MENU_STATE` int(1) NULL DEFAULT NULL COMMENT 'èœå•çŠ¶æ€ 0ç¦ç”¨ 1æ­£å¸¸',
+                             `MENU_SORT` int(11) NULL DEFAULT NULL COMMENT 'èœå•åºå·',
+                             `REMARK` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'èœå•å¤‡æ³¨',
+                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                             `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                              PRIMARY KEY (`id`) USING BTREE,
                              UNIQUE INDEX `MENU_ID`(`MENU_ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -59,33 +59,33 @@ CREATE TABLE `sys_menu`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_org`;
 CREATE TABLE `sys_org`  (
-                            `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Âß¼­Ö÷¼üÎŞÒâÒå',
-                            `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '»ú¹¹ID Ö÷¼ü',
-                            `ORG_CODE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '»ú¹¹´úÂë',
-                            `ORG_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '»ú¹¹Ãû³Æ',
-                            `ORG_SHORT_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '»ú¹¹¼ò³Æ',
-                            `ORG_PARENT_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '¸¸»ú¹¹ID',
-                            `ORG_TYPE` int(11) NULL DEFAULT NULL COMMENT '»ú¹¹ÀàĞÍ -1¸ù 1¹«Ë¾ 2²¿ÃÅ 3´¦ 4¿Æ 5ÍÅ 6×é',
-                            `ORG_LEVEL` int(11) NULL DEFAULT NULL COMMENT '»ú¹¹¼¶±ğ -1¸ù¼¶±ğ 0×Ü¹«Ë¾¼¶±ğ 1Ê¡¹«Ë¾ 2µØÊĞ 3ÏØÊĞ 4ÏçÕò 5´å',
-                            `ORG_SORT` int(11) NULL DEFAULT NULL COMMENT '»ú¹¹ĞòºÅ',
-                            `ORG_STATUS` int(2) NULL DEFAULT NULL COMMENT '»ú¹¹×´Ì¬',
-                            `Remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '±¸×¢',
-                            `ORG_CORP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ËùÊô»ú¹¹ID',
-                            `ORG_CORP_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ËùÊô»ú¹¹Ãû³Æ',
-                            `ORG_BRANCH_ID` varchar(32) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'ËùÔÚ±¾²¿/×Ü²¿/Ê¡¹«Ë¾ »ú¹¹ID',
-                            `ORG_BRANCH_NAME` varchar(255) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'ËùÔÚ±¾²¿/×Ü²¿/Ê¡¹«Ë¾ »ú¹¹Ãû³Æ',
-                            `ORG_CITY_ID` varchar(32) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'ËùÔÚµØÊĞ¹«Ë¾ »ú¹¹ID',
-                            `ORG_CITY_NAME` varchar(255) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'ËùÔÚµØÊĞ¹«Ë¾ »ú¹¹Ãû³Æ',
-                            `ORG_County_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ËùÔÚÏØÊĞ¹«Ë¾»ú¹¹ID',
-                            `ORG_County_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ËùÔÚÏØÊĞ¹«Ë¾»ú¹¹Ãû³Æ',
-                            `ORG_SEQ` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '»ú¹¹ËùÔÚÂ·¾¶±àÂë',
-                            `ORG_SEQ_CH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '»ú¹¹ËùÔÚÖĞÎÄÂ·¾¶',
-                            `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                            `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                            `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                            `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                            `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                            `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                            `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'é€»è¾‘ä¸»é”®æ— æ„ä¹‰',
+                            `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'æœºæ„ID ä¸»é”®',
+                            `ORG_CODE` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æœºæ„ä»£ç ',
+                            `ORG_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'æœºæ„åç§°',
+                            `ORG_SHORT_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æœºæ„ç®€ç§°',
+                            `ORG_PARENT_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'çˆ¶æœºæ„ID',
+                            `ORG_TYPE` int(11) NULL DEFAULT NULL COMMENT 'æœºæ„ç±»å‹ -1æ ¹ 1å…¬å¸ 2éƒ¨é—¨ 3å¤„ 4ç§‘ 5å›¢ 6ç»„',
+                            `ORG_LEVEL` int(11) NULL DEFAULT NULL COMMENT 'æœºæ„çº§åˆ« -1æ ¹çº§åˆ« 0æ€»å…¬å¸çº§åˆ« 1çœå…¬å¸ 2åœ°å¸‚ 3å¿å¸‚ 4ä¹¡é•‡ 5æ‘',
+                            `ORG_SORT` int(11) NULL DEFAULT NULL COMMENT 'æœºæ„åºå·',
+                            `ORG_STATUS` int(2) NULL DEFAULT NULL COMMENT 'æœºæ„çŠ¶æ€',
+                            `Remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å¤‡æ³¨',
+                            `ORG_CORP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æ‰€å±æœºæ„ID',
+                            `ORG_CORP_NAME` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æ‰€å±æœºæ„åç§°',
+                            `ORG_BRANCH_ID` varchar(32) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'æ‰€åœ¨æœ¬éƒ¨/æ€»éƒ¨/çœå…¬å¸ æœºæ„ID',
+                            `ORG_BRANCH_NAME` varchar(255) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'æ‰€åœ¨æœ¬éƒ¨/æ€»éƒ¨/çœå…¬å¸ æœºæ„åç§°',
+                            `ORG_CITY_ID` varchar(32) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'æ‰€åœ¨åœ°å¸‚å…¬å¸ æœºæ„ID',
+                            `ORG_CITY_NAME` varchar(255) CHARACTER SET gbk COLLATE gbk_bin NULL DEFAULT NULL COMMENT 'æ‰€åœ¨åœ°å¸‚å…¬å¸ æœºæ„åç§°',
+                            `ORG_County_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æ‰€åœ¨å¿å¸‚å…¬å¸æœºæ„ID',
+                            `ORG_County_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æ‰€åœ¨å¿å¸‚å…¬å¸æœºæ„åç§°',
+                            `ORG_SEQ` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æœºæ„æ‰€åœ¨è·¯å¾„ç¼–ç ',
+                            `ORG_SEQ_CH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'æœºæ„æ‰€åœ¨ä¸­æ–‡è·¯å¾„',
+                            `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                            `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                            `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                            `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                            `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                            `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                             PRIMARY KEY (`ID`) USING BTREE,
                             UNIQUE INDEX `ORG_ID`(`ORG_ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -93,10 +93,10 @@ CREATE TABLE `sys_org`  (
 -- ----------------------------
 -- Records of sys_org
 -- ----------------------------
-INSERT INTO `sys_org` VALUES (1, '0', '0', 'ÈË±£¼¯ÍÅ', 'ÈË±£¼¯ÍÅ', '-1', -1, -1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 'ÈË±£¼¯ÍÅ', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 10:56:30', NULL);
-INSERT INTO `sys_org` VALUES (2, '1', '1', '¼¯ÍÅ±¾²¿', '¼¯ÍÅ±¾²¿', '0', 1, 0, 1, 1, NULL, '1', '¼¯ÍÅ±¾²¿', '1', '¼¯ÍÅ±¾²¿', NULL, NULL, NULL, NULL, '0,1', 'ÈË±£¼¯ÍÅ\\¼¯ÍÅ±¾²¿', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 11:00:07', NULL);
-INSERT INTO `sys_org` VALUES (3, '11', '11', '²ÆÎñ²¿', '²ÆÎñ²¿', '1', 2, 0, 1, 1, NULL, '1', '¼¯ÍÅ±¾²¿', '1', '¼¯ÍÅ±¾²¿', NULL, NULL, NULL, NULL, '0,1,11', 'ÈË±£¼¯ÍÅ\\¼¯ÍÅ±¾²¿\\²ÆÎñ²¿', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 11:04:00', NULL);
-INSERT INTO `sys_org` VALUES (4, '111', '111', '²É¹º´¦', '²É¹º´¦', '11', 3, 0, 1, 1, NULL, '1', '¼¯ÍÅ±¾²¿', '1', '¼¯ÍÅ±¾²¿', NULL, NULL, NULL, NULL, '0,1,11,111', 'ÈË±£¼¯ÍÅ\\¼¯ÍÅ±¾²¿\\²ÆÎñ²¿\\²É¹º´¦', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 11:05:27', NULL);
+INSERT INTO `sys_org` VALUES (1, '0', '0', 'äººä¿é›†å›¢', 'äººä¿é›†å›¢', '-1', -1, -1, 0, 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', 'äººä¿é›†å›¢', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 10:56:30', NULL);
+INSERT INTO `sys_org` VALUES (2, '1', '1', 'é›†å›¢æœ¬éƒ¨', 'é›†å›¢æœ¬éƒ¨', '0', 1, 0, 1, 1, NULL, '1', 'é›†å›¢æœ¬éƒ¨', '1', 'é›†å›¢æœ¬éƒ¨', NULL, NULL, NULL, NULL, '0,1', 'äººä¿é›†å›¢\\é›†å›¢æœ¬éƒ¨', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 11:00:07', NULL);
+INSERT INTO `sys_org` VALUES (3, '11', '11', 'è´¢åŠ¡éƒ¨', 'è´¢åŠ¡éƒ¨', '1', 2, 0, 1, 1, NULL, '1', 'é›†å›¢æœ¬éƒ¨', '1', 'é›†å›¢æœ¬éƒ¨', NULL, NULL, NULL, NULL, '0,1,11', 'äººä¿é›†å›¢\\é›†å›¢æœ¬éƒ¨\\è´¢åŠ¡éƒ¨', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 11:04:00', NULL);
+INSERT INTO `sys_org` VALUES (4, '111', '111', 'é‡‡è´­å¤„', 'é‡‡è´­å¤„', '11', 3, 0, 1, 1, NULL, '1', 'é›†å›¢æœ¬éƒ¨', '1', 'é›†å›¢æœ¬éƒ¨', NULL, NULL, NULL, NULL, '0,1,11,111', 'äººä¿é›†å›¢\\é›†å›¢æœ¬éƒ¨\\è´¢åŠ¡éƒ¨\\é‡‡è´­å¤„', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 11:05:27', NULL);
 
 -- ----------------------------
 -- Table structure for sys_role
@@ -104,18 +104,18 @@ INSERT INTO `sys_org` VALUES (4, '111', '111', '²É¹º´¦', '²É¹º´¦', '11', 3, 0, 1
 DROP TABLE IF EXISTS `sys_role`;
 CREATE TABLE `sys_role`  (
                              `ID` bigint(20) NOT NULL AUTO_INCREMENT,
-                             `Role_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '½ÇÉ«ID',
-                             `Role_Code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '½ÇÉ«´úÂë',
-                             `Role_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '½ÇÉ«Ãû³Æ',
-                             `Role_Type` int(2) NOT NULL COMMENT '½ÇÉ«ÀàĞÍ',
-                             `Role_STATE` int(1) NOT NULL COMMENT '½ÇÉ«×´Ì¬',
-                             `Remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '½ÇÉ«ÃèÊö',
-                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                             `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                             `Role_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'è§’è‰²ID',
+                             `Role_Code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'è§’è‰²ä»£ç ',
+                             `Role_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'è§’è‰²åç§°',
+                             `Role_Type` int(2) NOT NULL COMMENT 'è§’è‰²ç±»å‹',
+                             `Role_STATE` int(1) NOT NULL COMMENT 'è§’è‰²çŠ¶æ€',
+                             `Remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'è§’è‰²æè¿°',
+                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                             `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                              PRIMARY KEY (`ID`) USING BTREE,
                              UNIQUE INDEX `Role_ID`(`Role_ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
@@ -123,7 +123,7 @@ CREATE TABLE `sys_role`  (
 -- ----------------------------
 -- Records of sys_role
 -- ----------------------------
-INSERT INTO `sys_role` VALUES (1, 'admin', 'admin', '¹ÜÀíÔ±', 1, 1, '¹ÜÀíÔ±', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 10:51:40', NULL);
+INSERT INTO `sys_role` VALUES (1, 'admin', 'admin', 'ç®¡ç†å‘˜', 1, 1, 'ç®¡ç†å‘˜', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 10:51:40', NULL);
 
 -- ----------------------------
 -- Table structure for sys_role_menu
@@ -133,12 +133,12 @@ CREATE TABLE `sys_role_menu`  (
                                   `ID` bigint(20) NOT NULL AUTO_INCREMENT,
                                   `ROLE_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
                                   `MENU_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-                                  `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                                  `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                                  `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                                  `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                                  `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                                  `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                                  `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                                  `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                                  `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                                  `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                                  `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                                  `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                                   PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
@@ -151,35 +151,35 @@ CREATE TABLE `sys_role_menu`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_user`;
 CREATE TABLE `sys_user`  (
-                             `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'Âß¼­Ö÷¼ü·ÇÒµÎñÖ÷¼ü ÎŞÒâÒå',
-                             `EMP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Î¨Ò»Ô±¹¤Ö÷¼ü',
-                             `EMP_Code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤´úÂë',
-                             `EMP_Name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤ĞÕÃû',
-                             `EMP_Pwd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤ÃÜÂë',
-                             `EMP_Sex` int(1) NULL DEFAULT NULL COMMENT 'Ô±¹¤ĞÔ±ğ 0Å® 1ÄĞ',
-                             `EMP_level` int(4) NULL DEFAULT NULL COMMENT 'Ô±¹¤¼¶±ğ´úÂë',
-                             `EMP_type` int(1) NULL DEFAULT NULL COMMENT 'Ô±¹¤ÀàĞÍ 1ÄÚ²¿0Íâ²¿',
-                             `EMP_mobile` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤ÊÖ»ú',
-                             `EMP_phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤¹¤×÷µç»°',
-                             `EMP_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Ô±¹¤¹¤×÷ÓÊÏä',
-                             `EMP_State` int(1) NULL DEFAULT NULL COMMENT 'Ô±¹¤×´Ì¬ 0 ½ûÓÃ 1Õı³£',
-                             `EMP_Sort` int(11) NULL DEFAULT NULL COMMENT 'Ô±¹¤ĞòºÅ',
-                             `OPER_TYPE` int(2) NULL DEFAULT NULL COMMENT 'Êı¾İ·¶Î§¿ØÖÆ 0¹Ø±Õ Ö»ÄÜ¿´µ±Ç°ËùÊô·¶Î§Êı¾İ 1 ¿´µ½ÅäÖÃµÄÊı¾İ·¶Î§Êı¾İ',
-                             `REMARK` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '±¸×¢',
-                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                             `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                             `ID` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'é€»è¾‘ä¸»é”®éä¸šåŠ¡ä¸»é”® æ— æ„ä¹‰',
+                             `EMP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'å”¯ä¸€å‘˜å·¥ä¸»é”®',
+                             `EMP_Code` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥ä»£ç ',
+                             `EMP_Name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥å§“å',
+                             `EMP_Pwd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥å¯†ç ',
+                             `EMP_Sex` int(1) NULL DEFAULT NULL COMMENT 'å‘˜å·¥æ€§åˆ« 0å¥³ 1ç”·',
+                             `EMP_level` int(4) NULL DEFAULT NULL COMMENT 'å‘˜å·¥çº§åˆ«ä»£ç ',
+                             `EMP_type` int(1) NULL DEFAULT NULL COMMENT 'å‘˜å·¥ç±»å‹ 1å†…éƒ¨0å¤–éƒ¨',
+                             `EMP_mobile` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥æ‰‹æœº',
+                             `EMP_phone` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥å·¥ä½œç”µè¯',
+                             `EMP_email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å‘˜å·¥å·¥ä½œé‚®ç®±',
+                             `EMP_State` int(1) NULL DEFAULT NULL COMMENT 'å‘˜å·¥çŠ¶æ€ 0 ç¦ç”¨ 1æ­£å¸¸',
+                             `EMP_Sort` int(11) NULL DEFAULT NULL COMMENT 'å‘˜å·¥åºå·',
+                             `OPER_TYPE` int(2) NULL DEFAULT NULL COMMENT 'æ•°æ®èŒƒå›´æ§åˆ¶ 0å…³é—­ åªèƒ½çœ‹å½“å‰æ‰€å±èŒƒå›´æ•°æ® 1 çœ‹åˆ°é…ç½®çš„æ•°æ®èŒƒå›´æ•°æ®',
+                             `REMARK` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å¤‡æ³¨',
+                             `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                             `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                             `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                             `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                             `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                             `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                              PRIMARY KEY (`ID`) USING BTREE,
-                             UNIQUE INDEX `EMP_ID`(`EMP_ID`) USING BTREE COMMENT 'ÒµÎñÖ÷¼üÎ¨Ò»'
+                             UNIQUE INDEX `EMP_ID`(`EMP_ID`) USING BTREE COMMENT 'ä¸šåŠ¡ä¸»é”®å”¯ä¸€'
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES (1, 'admin', 'admin', '¹ÜÀíÔ±', '123456', 1, 0, 1, '13000000011', '010-1234567', 'admin@admin.com', 1, 1, 0, NULL, 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 10:53:07', NULL);
+INSERT INTO `sys_user` VALUES (1, 'admin', 'admin', 'ç®¡ç†å‘˜', '123456', 1, 0, 1, '13000000011', '010-1234567', 'admin@admin.com', 1, 1, 0, NULL, 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 10:53:07', NULL);
 
 -- ----------------------------
 -- Table structure for sys_user_org
@@ -188,24 +188,24 @@ DROP TABLE IF EXISTS `sys_user_org`;
 CREATE TABLE `sys_user_org`  (
                                  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
                                  `EMP_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-                                 `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '²¿ÃÅID',
-                                 `ORG_Name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '²¿ÃÅÃû³Æ',
-                                 `USE_TYPE` int(1) NULL DEFAULT NULL COMMENT '1 ¾ÍÖ°²¿ÃÅ 2¼æÖ°²¿ÃÅ',
-                                 `USE_STATE` int(1) NULL DEFAULT NULL COMMENT '0 ²»Ê¹ÓÃ 1Ê¹ÓÃÖĞ',
-                                 `ORG_SEQ` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ÍêÕû²¿ÃÅËùÔÚ²¿ÃÅ´úÂëÂ·¾¶',
-                                 `ORG_SEQ_CH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ÍêÕûµÄ²¿ÃÅËùÔÚ²¿ÃÅÃû³Æ',
-                                 `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÖ÷¼ü',
-                                 `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '´´½¨ÈËÃû³Æ',
-                                 `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÖ÷¼ü',
-                                 `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÈËÃû³Æ',
-                                 `Create_Time` datetime NULL DEFAULT NULL COMMENT '´´½¨Ê±¼ä',
-                                 `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ĞŞ¸ÄÊ±¼ä',
+                                 `ORG_ID` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'éƒ¨é—¨ID',
+                                 `ORG_Name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'éƒ¨é—¨åç§°',
+                                 `USE_TYPE` int(1) NULL DEFAULT NULL COMMENT '1 å°±èŒéƒ¨é—¨ 2å…¼èŒéƒ¨é—¨',
+                                 `USE_STATE` int(1) NULL DEFAULT NULL COMMENT '0 ä¸ä½¿ç”¨ 1ä½¿ç”¨ä¸­',
+                                 `ORG_SEQ` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å®Œæ•´éƒ¨é—¨æ‰€åœ¨éƒ¨é—¨ä»£ç è·¯å¾„',
+                                 `ORG_SEQ_CH` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'å®Œæ•´çš„éƒ¨é—¨æ‰€åœ¨éƒ¨é—¨åç§°',
+                                 `Create_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººä¸»é”®',
+                                 `Create_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'åˆ›å»ºäººåç§°',
+                                 `Modify_Pk` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººä¸»é”®',
+                                 `Modify_By` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ä¿®æ”¹äººåç§°',
+                                 `Create_Time` datetime NULL DEFAULT NULL COMMENT 'åˆ›å»ºæ—¶é—´',
+                                 `Modify_Time` datetime NULL DEFAULT NULL COMMENT 'ä¿®æ”¹æ—¶é—´',
                                  PRIMARY KEY (`ID`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_user_org
 -- ----------------------------
-INSERT INTO `sys_user_org` VALUES (1, 'admin', '111', '²É¹º´¦', 1, 1, '0,1,11,111', 'ÈË±£¼¯ÍÅ\\¼¯ÍÅ±¾²¿\\²ÆÎñ²¿\\²É¹º´¦', 'admin', '¹ÜÀíÔ±', NULL, NULL, '2023-07-19 11:07:15', NULL);
+INSERT INTO `sys_user_org` VALUES (1, 'admin', '111', 'é‡‡è´­å¤„', 1, 1, '0,1,11,111', 'äººä¿é›†å›¢\\é›†å›¢æœ¬éƒ¨\\è´¢åŠ¡éƒ¨\\é‡‡è´­å¤„', 'admin', 'ç®¡ç†å‘˜', NULL, NULL, '2023-07-19 11:07:15', NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;
