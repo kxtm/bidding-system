@@ -1,4 +1,4 @@
-package com.chunjies.bidding.common.utils;
+package com.chunjies.bidding.common.base;
 
 import java.io.Serializable;
 
@@ -34,9 +34,9 @@ public class Result<T> implements Serializable {
      * @param <T>  对象类型
      * @return R
      */
-    public static <T> Result SUCCESS(String msg, T data) {
+    public static <T> Result<T> SUCCESS(String msg, T data) {
 
-        return new Result(true, msg, data);
+        return new Result<>(true, msg, data);
     }
 
     /**
@@ -47,8 +47,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> Result FAIL(String msg, T data) {
-        return new Result(false, msg, data);
+    public static <T> Result<T> FAIL(String msg, T data) {
+        return new Result<>(false, msg, data);
     }
 
 
@@ -59,9 +59,9 @@ public class Result<T> implements Serializable {
      * @param <T> 对象类型
      * @return R
      */
-    public static <T> Result SUCCESS(String msg) {
+    public static <T> Result<T> SUCCESS(String msg) {
 
-        return new Result(true, msg, null);
+        return new Result<>(true, msg, null);
     }
 
     /**
@@ -71,8 +71,8 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> Result FAIL(String msg) {
-        return new Result(false, msg, null);
+    public static <T> Result<T> FAIL(String msg) {
+        return new Result<>(false, msg, null);
     }
 
     public boolean isCode() {
