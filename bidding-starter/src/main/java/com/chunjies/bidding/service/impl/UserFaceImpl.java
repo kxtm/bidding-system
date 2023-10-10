@@ -5,7 +5,7 @@ import com.chunjies.bidding.common.enums.Modules;
 import com.chunjies.bidding.common.enums.OperType;
 import com.chunjies.bidding.data.dao.UserMapper;
 import com.chunjies.bidding.model.UserModel;
-import com.chunjies.bidding.service.IUserService;
+import com.chunjies.bidding.service.IUserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +16,8 @@ import org.springframework.stereotype.Service;
  * @author: chunjie
  * @date: 2022-11-12 18:06
  **/
-@Service("userService")
-public class UserServiceImpl implements IUserService {
+@Service("userFace")
+public class UserFaceImpl implements IUserFace {
 
     private UserMapper userDao;
 

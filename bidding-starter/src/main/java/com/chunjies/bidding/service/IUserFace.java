@@ -10,7 +10,7 @@ import com.chunjies.bidding.model.UserModel;
  * @date: 2022-11-12 18:05
  **/
 
-public interface IUserService {
+public interface IUserFace {
 
     UserModel getUserByName(String name);
 }

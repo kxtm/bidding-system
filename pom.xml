@@ -43,8 +43,27 @@
 			<artifactId>mysql-connector-j</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+
 	</dependencies>
 
-
+<build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<configuration>
+				<encoding>utf-8</encoding>
+				<source>1.8</source>
+				<compilerVersion>1.8</compilerVersion>
+			</configuration>
+			<version>3.11.0</version>
+		</plugin>
+	</plugins>
+</build>
 
 </project>
