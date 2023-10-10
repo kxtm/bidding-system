@@ -1,8 +1,7 @@
-package com.chunjies.bidding.controller.project;
+package com.chunjies.bidding.controller;
 
 import com.chunjies.bidding.common.base.IController;
 import com.chunjies.bidding.common.base.Result;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/project")
-public class ProjectManger extends IController {
+public class ProjectController extends IController {
     @RequestMapping("/list")
     public Result<String> projectList(ModelMap map) {
 
-        return Result.FAIL("请求失败");
+        return Result.error("请求失败");
     }
 }

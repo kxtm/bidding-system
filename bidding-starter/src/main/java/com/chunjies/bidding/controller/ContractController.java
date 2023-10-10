@@ -1,16 +1,15 @@
-package com.chunjies.bidding.controller.notice;
+package com.chunjies.bidding.controller;
 
 import com.chunjies.bidding.common.base.IController;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @name: 信息管理
+ * @name: ContractManger
  * @author: chunjie
- * @date: 2022-11-18 20:47
+ * @date: 2022-11-18 20:53
  **/
 @RestController
-@RequestMapping("/info")
-public class InfoManger extends IController {
+@RequestMapping("/contract")
+public class ContractController extends IController {
 }

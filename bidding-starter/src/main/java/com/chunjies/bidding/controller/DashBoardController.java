@@ -41,7 +41,7 @@ public class DashBoardController extends IController {
     public Result<String> getIndex() {
         Page<Object> d = Page.init();
         d.setTotalRecord(65);
-        return Result.SUCCESS(d.getTotalPage() + "");
+        return Result.ok(d.getTotalPage() + "");
     }
 
 

@@ -1,7 +1,6 @@
-package com.chunjies.bidding.controller.meeting;
+package com.chunjies.bidding.controller;
 
 import com.chunjies.bidding.common.base.IController;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,5 +11,5 @@ import org.springframework.web.bind.annotation.RestController;
  **/
 @RestController
 @RequestMapping("/meeting")
-public class MeetingManger extends IController {
+public class MeetingController extends IController {
 }

@@ -1,5 +1,7 @@
 package com.chunjies.bidding.common.base;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 
 /**
@@ -9,13 +11,12 @@ import java.io.Serializable;
  * @author: chunjie
  * @date: 2022-11-12 19:30
  **/
-
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Result<T> implements Serializable {
     //成功 true 失败 false
     private boolean code;
     //消息
     private String msg;
-
     //数据
     private T data;
 
@@ -34,7 +35,7 @@ public class Result<T> implements Serializable {
      * @param <T>  对象类型
      * @return R
      */
-    public static <T> Result<T> SUCCESS(String msg, T data) {
+    public static <T> Result<T> ok(String msg, T data) {
 
         return new Result<>(true, msg, data);
     }
@@ -47,7 +48,7 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> Result<T> FAIL(String msg, T data) {
+    public static <T> Result<T> error(String msg, T data) {
         return new Result<>(false, msg, data);
     }
 
@@ -59,7 +60,7 @@ public class Result<T> implements Serializable {
      * @param <T> 对象类型
      * @return R
      */
-    public static <T> Result<T> SUCCESS(String msg) {
+    public static <T> Result<T> ok(String msg) {
 
         return new Result<>(true, msg, null);
     }
@@ -71,7 +72,7 @@ public class Result<T> implements Serializable {
      * @param <T>
      * @return R
      */
-    public static <T> Result<T> FAIL(String msg) {
+    public static <T> Result<T> error(String msg) {
         return new Result<>(false, msg, null);
     }
 

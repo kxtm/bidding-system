@@ -1,4 +1,4 @@
-package com.chunjies.bidding.controller.system;
+package com.chunjies.bidding.controller;
 
 import com.chunjies.bidding.common.base.IController;
 import org.springframework.stereotype.Controller;
