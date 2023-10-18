@@ -5,9 +5,8 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: HomeView
+      path:'/',
+      component:()=>import('@/views/HomeView.vue')
     },
     {
       path:'/login',
@@ -23,5 +22,12 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue')
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  // if (to.path !== "/login") {
+  //   router.push("/login").then(r =>{});
+  // }
+  next()
 })
 export default router
