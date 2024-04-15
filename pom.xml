@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<modules>
-		<module>bidding-starter</module>
+		<module>bidding-start</module>
         <module>bidding-core</module>
         <module>bidding-external</module>
         <module>bidding-job</module>
