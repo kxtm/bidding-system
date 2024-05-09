@@ -1,25 +1,23 @@
 <template>
-  <div class="login-container">
-    <div class="panel panel-default login-panel">
-      <div class="panel-heading">登录入口</div>
-      <div class="panel-body">
-        <div class="input-group">
-          <span class="input-group-addon glyphicon glyphicon-user"></span>
-          <input type="text" class="form-control" placeholder="用户名">
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon glyphicon glyphicon-lock" ></span>
-          <input type="password" class="form-control" placeholder="密码">
-        </div>
-        <div class="input-group">
-          <span class="input-group-addon glyphicon glyphicon-picture"></span>
-          <input type="text" class="form-control" placeholder="验证码">
-        </div>
-        <div class="btn-group">
-           <button class="btn btn-info " id="login-btn" type="button">登录</button>
-        </div>
-      </div>
+  <div class="mb-4">
+    <el-button>Default</el-button>
+    <el-button type="primary">Primary</el-button>
+    <el-button type="success">Success</el-button>
+    <el-button type="info">Info</el-button>
+    <el-button type="warning">Warning</el-button>
+    <el-button type="danger">Danger</el-button>
+  </div>
 
-    </div>
+  <div>
+    <el-button :icon="Search" circle />
+    <el-button type="primary" :icon="Edit" circle />
+    <el-button type="success" :icon="Check" circle />
+    <el-button type="info" :icon="Message" circle />
+    <el-button type="warning" :icon="Star" circle />
+    <el-button type="danger" :icon="Delete" circle />
+
   </div>
 </template>
+<script setup>
+import {Check, Delete, Edit, Message, Search, Star} from '@element-plus/icons-vue'
+</script>
