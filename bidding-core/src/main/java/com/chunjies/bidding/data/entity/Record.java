@@ -1,6 +1,6 @@
 package com.chunjies.bidding.data.entity;
 
-import com.chunjies.bidding.common.base.IEntity;
+import com.chunjies.bidding.common.core.IEntity;
 
 /**
  * 日志表

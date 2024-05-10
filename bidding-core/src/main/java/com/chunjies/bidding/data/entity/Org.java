@@ -1,6 +1,6 @@
 package com.chunjies.bidding.data.entity;
 
-import com.chunjies.bidding.common.base.IEntity;
+import com.chunjies.bidding.common.core.IEntity;
 
 public class Org extends IEntity {
     private String orgId;
