@@ -1,4 +1,4 @@
-package com.chunjies.web.config;
+package com.chunjies.bidding.web.config;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 

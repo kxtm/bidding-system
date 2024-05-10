@@ -1,11 +1,11 @@
-package com.chunjies.web.service.impl;
+package com.chunjies.bidding.web.service.impl;
 
 import com.chunjies.bidding.common.annotation.SysLog;
 import com.chunjies.bidding.common.enums.Modules;
 import com.chunjies.bidding.common.enums.OperType;
 import com.chunjies.bidding.data.dao.UserMapper;
-import com.chunjies.web.model.UserModel;
-import com.chunjies.web.service.IUserFace;
+import com.chunjies.bidding.web.model.UserModel;
+import com.chunjies.bidding.web.service.IUserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

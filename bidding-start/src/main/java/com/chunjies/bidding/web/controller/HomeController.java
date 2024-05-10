@@ -1,4 +1,4 @@
-package com.chunjies.web.controller;
+package com.chunjies.bidding.web.controller;
 
 import com.chunjies.bidding.common.annotation.SysLog;
 import com.chunjies.bidding.common.core.IController;
@@ -7,8 +7,8 @@ import com.chunjies.bidding.common.enums.OperType;
 import com.chunjies.bidding.common.utils.Converts;
 import com.chunjies.bidding.common.utils.Page;
 import com.chunjies.bidding.common.core.Result;
-import com.chunjies.web.model.UserModel;
-import com.chunjies.web.service.IUserFace;
+import com.chunjies.bidding.web.model.UserModel;
+import com.chunjies.bidding.web.service.IUserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

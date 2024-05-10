@@ -1,4 +1,4 @@
-package com.chunjies.web.controller;
+package com.chunjies.bidding.web.controller;
 
 import com.chunjies.bidding.common.core.IController;
 import com.chunjies.bidding.common.core.Result;

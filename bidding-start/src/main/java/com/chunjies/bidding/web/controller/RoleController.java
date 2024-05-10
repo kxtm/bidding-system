@@ -1,15 +1,15 @@
-package com.chunjies.web.controller;
+package com.chunjies.bidding.web.controller;
 
 import com.chunjies.bidding.common.core.IController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @name: 供应商管理
+ * @name: 角色管理模块
  * @author: chunjie
- * @date: 2022-11-19 00:20
+ * @date: 2022-11-16 22:52
  **/
 @RestController
-@RequestMapping("/supplier")
-public class SupplierController extends IController {
+@RequestMapping("/role")
+public class RoleController extends IController {
 }

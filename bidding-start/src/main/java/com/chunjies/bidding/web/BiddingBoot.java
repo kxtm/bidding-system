@@ -1,4 +1,4 @@
-package com.chunjies.web;
+package com.chunjies.bidding.web;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

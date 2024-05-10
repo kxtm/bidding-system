@@ -1,6 +1,6 @@
-package com.chunjies.web.service;
+package com.chunjies.bidding.web.service;
 
-import com.chunjies.web.model.UserModel;
+import com.chunjies.bidding.web.model.UserModel;
 
 /**
  * 用户service接口

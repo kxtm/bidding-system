@@ -1,4 +1,4 @@
-package com.chunjies.web.model;
+package com.chunjies.bidding.web.model;
 
 /**
  * @name: 树数据模型
