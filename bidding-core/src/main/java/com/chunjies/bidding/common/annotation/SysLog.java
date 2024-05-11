@@ -1,6 +1,6 @@
 package com.chunjies.bidding.common.annotation;
 
-import com.chunjies.bidding.common.enums.Modules;
+import com.chunjies.bidding.common.enums.ModuleType;
 import com.chunjies.bidding.common.enums.OperType;
 import org.springframework.stereotype.Component;
 
@@ -13,7 +13,7 @@ import java.lang.annotation.*;
 public @interface SysLog {
 
     //模块
-    Modules module() default Modules.EMPTY;
+    ModuleType module() default ModuleType.EMPTY;
 
     //功能
     String func() default "";

@@ -1,11 +1,11 @@
 package com.chunjies.bidding.common.enums;
 
-public enum Modules {
+public enum ModuleType {
     CGGL("CGGL","采购管理"),CGSC("CGSC","采购商城"),CGMH("CGMH","采购门户"),EMPTY("","");
     private String type;
     private String desc;
 
-    Modules(String type, String desc) {
+    ModuleType(String type, String desc) {
         this.type = type;
         this.desc = desc;
     }

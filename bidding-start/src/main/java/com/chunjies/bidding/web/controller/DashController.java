@@ -3,7 +3,7 @@ package com.chunjies.bidding.web.controller;
 import com.chunjies.bidding.common.annotation.SysLog;
 import com.chunjies.bidding.common.core.IController;
 import com.chunjies.bidding.common.core.Result;
-import com.chunjies.bidding.common.enums.Modules;
+import com.chunjies.bidding.common.enums.ModuleType;
 import com.chunjies.bidding.common.enums.OperType;
 import com.chunjies.bidding.common.utils.Page;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class DashController extends IController {
 
 
     @GetMapping(value = "/board")
-    @SysLog(module = Modules.CGGL, func = "index", desc = "仪表盘默认数据", type = OperType.QUERY)
+    @SysLog(module = ModuleType.CGGL, func = "index", desc = "仪表盘默认数据", type = OperType.QUERY)
     public Result<String> index() {
 
         return Result.error("请求错误");

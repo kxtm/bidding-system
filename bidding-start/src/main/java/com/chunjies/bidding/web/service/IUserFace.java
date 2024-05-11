@@ -1,6 +1,6 @@
 package com.chunjies.bidding.web.service;
 
-import com.chunjies.bidding.web.model.UserModel;
+import com.chunjies.bidding.web.model.LoginDto;
 
 /**
  * 用户service接口
@@ -12,5 +12,5 @@ import com.chunjies.bidding.web.model.UserModel;
 
 public interface IUserFace {
 
-    UserModel getUserByName(String name);
+    LoginDto getUserByName(String name);
 }

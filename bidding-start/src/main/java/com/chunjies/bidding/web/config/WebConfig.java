@@ -1,5 +1,6 @@
 package com.chunjies.bidding.web.config;
 
+import org.hibernate.validator.HibernateValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
@@ -7,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 /**
  * @name: WebConfig
@@ -32,5 +36,11 @@ public class WebConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(securityCfg()).addPathPatterns("/**").excludePathPatterns("/auth/login");
         WebMvcConfigurer.super.addInterceptors(registry);
+    }
+
+
+    @Bean
+    public Validator validator() {
+        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
     }
 }

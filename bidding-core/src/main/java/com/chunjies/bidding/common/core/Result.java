@@ -20,6 +20,8 @@ public class Result<T> implements Serializable {
     //数据
     private T data;
 
+    private Long timestamp = System.currentTimeMillis();
+
     public Result(boolean code, String msg, T data) {
         this.code = code;
         this.msg = msg;
@@ -114,6 +116,17 @@ public class Result<T> implements Serializable {
         this.data = data;
     }
 
+    public Boolean getCode() {
+        return code;
+    }
+
+    public Long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
 
     final static String ERROR_DEFAULT_MSG = "处理错误";
     final static String SUCCESS_DEFAULT_MSG = "处理成功";

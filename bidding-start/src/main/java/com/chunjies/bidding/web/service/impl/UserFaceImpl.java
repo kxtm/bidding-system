@@ -1,10 +1,12 @@
 package com.chunjies.bidding.web.service.impl;
 
 import com.chunjies.bidding.common.annotation.SysLog;
-import com.chunjies.bidding.common.enums.Modules;
+import com.chunjies.bidding.common.enums.BizMsgType;
+import com.chunjies.bidding.common.enums.ModuleType;
 import com.chunjies.bidding.common.enums.OperType;
+import com.chunjies.bidding.common.exception.BizException;
 import com.chunjies.bidding.data.dao.UserMapper;
-import com.chunjies.bidding.web.model.UserModel;
+import com.chunjies.bidding.web.model.LoginDto;
 import com.chunjies.bidding.web.service.IUserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,10 +24,11 @@ public class UserFaceImpl implements IUserFace {
     private UserMapper userDao;
 
     @Override
-    @SysLog(module = Modules.CGGL,desc = "用户名查询用户",type = OperType.QUERY)
-    public UserModel getUserByName(String name) {
+    @SysLog(module = ModuleType.CGGL, desc = "用户名查询用户", type = OperType.QUERY)
+    public LoginDto getUserByName(String name) {
 
-        return new UserModel();
+        throw new BizException(BizMsgType.SYS_ERROR.getCode(), BizMsgType.SYS_ERROR.getMsg());
+
     }
 
     @Autowired
