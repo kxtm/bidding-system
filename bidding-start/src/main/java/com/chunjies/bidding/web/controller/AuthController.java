@@ -32,8 +32,8 @@ public class AuthController extends IController {
 
     @GetMapping("/test")
     public Result<String> test() {
-        userFace.getUserByName("11");
-        return Result.error();
+        LoginDto loginDto = userFace.getUserByName("11");
+        return Result.error(loginDto.getLoginName());
     }
 
 

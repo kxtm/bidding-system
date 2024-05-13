@@ -14,9 +14,9 @@ import org.springframework.stereotype.Service;
 /**
  * 用户service 接口实现类
  *
- * @name: UserServiceImpl
- * @author: chunjie
- * @date: 2022-11-12 18:06
+ * {@code @name:} UserServiceImpl
+ * {@code @author:} chunjie
+ * {@code @date:} 2022-11-12 18:06
  **/
 @Service("userFace")
 public class UserFaceImpl implements IUserFace {
@@ -24,11 +24,11 @@ public class UserFaceImpl implements IUserFace {
     private UserMapper userDao;
 
     @Override
-    @SysLog(module = ModuleType.CGGL, desc = "用户名查询用户", type = OperType.QUERY)
+    @SysLog(module = ModuleType.CGGL,func ="getUserByName" ,desc = "用户名查询用户", type = OperType.QUERY)
     public LoginDto getUserByName(String name) {
-
-        throw new BizException(BizMsgType.SYS_ERROR.getCode(), BizMsgType.SYS_ERROR.getMsg());
-
+        LoginDto dto=new LoginDto();
+        dto.setLoginName("aaa");
+       return  dto;
     }
 
     @Autowired

@@ -2,6 +2,7 @@ package com.chunjies.bidding.common.aspect;
 
 import com.chunjies.bidding.common.annotation.SysLog;
 import com.chunjies.bidding.common.utils.IPUtil;
+import com.chunjies.bidding.common.utils.JSONUtil;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -15,7 +16,6 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Arrays;
 
 @Aspect
 @Component
@@ -26,24 +26,23 @@ public class LogAspect {
     @Before(value = "@annotation(sysLog)")
     public void Before(JoinPoint joinPoint, SysLog sysLog) {
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        assert attributes != null;
         HttpServletRequest req = attributes.getRequest();
-        log.info("功能模块:{},{}", sysLog.module().getType(),sysLog.type().getDesc());
-        log.info("请求来源:{},{}", req.getRemoteAddr(), IPUtil.getIpAddr(req));
-        log.info("请求URL:{}", req.getRequestURL().toString());
-        log.info("请求方式:{}", req.getMethod());
-        log.info("响应方法:{}.{}", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
-        log.info("请求参数:{}", Arrays.toString(joinPoint.getArgs()));
+        log.error("功能模块:{},{},开始--{}", joinPoint.getSignature().getName(), sysLog.type().getDesc(), System.currentTimeMillis());
+        log.error("请求来源:{},{}", req.getRemoteAddr(), IPUtil.getIpAddr(req));
+        log.error("请求URL:{}", req.getRequestURL().toString());
+        log.error("请求方式:{}", req.getMethod());
+        log.error("响应方法:{}.{}",joinPoint.getSignature().getDeclaringTypeName(),joinPoint.getSignature().getName());
+        log.error("请求参数:{}", JSONUtil.toJson(joinPoint.getArgs()));
     }
 
     /**
      * 处理完请求后执行
-     *
-     * @param joinPoint 切点
      */
     @AfterReturning(pointcut = "@annotation(sysLog)", returning = "jsonResult")
     public void After(JoinPoint joinPoint, SysLog sysLog, Object jsonResult) {
-        log.info("功能模块:{}", sysLog.desc());
-        log.info("返回数据:{}", jsonResult);
+        log.error(" 返回数据:{}", JSONUtil.toJson(jsonResult));
+        log.error(" 功能模块:{},{} 结束--{}", joinPoint.getSignature().getName(), sysLog.desc(), System.currentTimeMillis());
     }
 
     /**
@@ -54,7 +53,6 @@ public class LogAspect {
      */
     @AfterThrowing(value = "@annotation(sysLog)", throwing = "e")
     public void throwing(JoinPoint joinPoint, SysLog sysLog, Exception e) {
-        log.info("功能模块:{}", sysLog.desc());
-        log.error("{}.{}处理异常:{},", joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName(), e);
+        log.error("{},{}异常:,", joinPoint.getSignature().getName(), sysLog.desc(), e);
     }
 }
