@@ -6,10 +6,10 @@ import org.springframework.util.ObjectUtils;
 
 /**
  * 类型转换工具
- *
- * @name: ConvertUtils
- * @author: chunjie
- * @date: 2022-11-12 21:18
+ * <p>
+ * {@code @name:} jav
+ * {@code @author:} chunjie
+ * {@code @date:} 2022-11-12 21:18
  **/
 
 public class Converts {
@@ -17,12 +17,22 @@ public class Converts {
 
     /**
      * 转成为对象
-     * @param obj
-     * @return
      */
     public static String toStr(Object obj) {
         log.info("toStr->{}", obj);
-        return ObjectUtils.isEmpty(obj) ? null : String.valueOf(obj);
+        return String.valueOf(obj);
+    }
+
+    public static Integer toInt(Object obj) {
+        return Integer.valueOf(ObjectUtils.isEmpty(obj) ? "0" : String.valueOf(obj));
+    }
+
+    public static Long toLong(Object obj) {
+        return Long.valueOf(ObjectUtils.isEmpty(obj) ? "0" : String.valueOf(obj));
+    }
+
+    public static Double toDouble(Object obj) {
+        return Double.valueOf(ObjectUtils.isEmpty(obj) ? "0" : String.valueOf(obj));
     }
 
 
