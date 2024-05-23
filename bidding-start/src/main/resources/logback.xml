@@ -57,8 +57,8 @@
         </filter>
     </appender>
     <!-- 系统模块日志级别控制  -->
-    <logger name="cn.sx.ebj.bidding" level="info" />
-    <logger name="cn.sx.ebj.bidding.data.dao" level="trace"/>
+    <logger name="com.chunjies.bidding.web" level="info" />
+    <logger name="com.chunjies.bidding.data.dao" level="trace"/>
     <!-- Spring日志级别控制  -->
     <logger name="org.springframework" level="warn" />
 
