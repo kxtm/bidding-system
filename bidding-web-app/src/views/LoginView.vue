@@ -22,7 +22,7 @@
   </el-form>
   <RightDrawer v-model="drawer" />
 </template>
-<script lang="ts" setup>
+<script  setup>
 import {reactive,ref} from 'vue'
 import RightDrawer from "@/components/RightDrawer.vue";
 const drawer=ref(false)
