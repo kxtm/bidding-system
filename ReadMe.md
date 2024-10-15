@@ -9,7 +9,8 @@
 * bidding-start 集采系统接口模块，
 * bidding-web-app  集采系统后台模块
 * bidding-web-supplier 集采系统供应商模块
-* bidding-web-market  集采服务商城
+* bidding-web-market  集采服务商城模块
+* bidding-web-tender 集采开评标模块
 
 
 
