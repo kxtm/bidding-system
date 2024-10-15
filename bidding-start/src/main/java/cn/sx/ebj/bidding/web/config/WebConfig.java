@@ -22,8 +22,8 @@ public class WebConfig implements WebMvcConfigurer {
     static Logger log = LoggerFactory.getLogger(WebConfig.class);
 
     @Bean
-    public SecurityCfg securityCfg() {
-        return new SecurityCfg();
+    public AuthConfig securityCfg() {
+        return new AuthConfig();
     }
 
     @Override
