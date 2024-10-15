@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.web.model;
 
-import cn.sx.ebj.bidding.common.consts.Constr;
+import cn.sx.ebj.bidding.core.consts.Constr;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;

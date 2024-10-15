@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.web.controller;
 
-import cn.sx.ebj.bidding.common.core.IController;
+import cn.sx.ebj.bidding.core.base.IController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

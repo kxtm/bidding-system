@@ -1,11 +1,11 @@
 package cn.sx.ebj.bidding.web.controller;
 
-import cn.sx.ebj.bidding.common.annotation.SysLog;
-import cn.sx.ebj.bidding.common.core.IController;
-import cn.sx.ebj.bidding.common.core.Result;
-import cn.sx.ebj.bidding.common.enums.ModuleType;
-import cn.sx.ebj.bidding.common.enums.OperType;
-import cn.sx.ebj.bidding.common.utils.Page;
+import cn.sx.ebj.bidding.core.annotation.SysLog;
+import cn.sx.ebj.bidding.core.base.IController;
+import cn.sx.ebj.bidding.core.base.Result;
+import cn.sx.ebj.bidding.core.enums.ModuleType;
+import cn.sx.ebj.bidding.core.enums.OperType;
+import cn.sx.ebj.bidding.core.utils.Page;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

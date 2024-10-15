@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.data.entity;
 
-import cn.sx.ebj.bidding.common.core.IEntity;
+import cn.sx.ebj.bidding.core.base.IEntity;
 
 public class Org extends IEntity {
     private String orgId;

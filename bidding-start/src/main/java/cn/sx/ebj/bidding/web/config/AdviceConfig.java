@@ -1,8 +1,8 @@
 package cn.sx.ebj.bidding.web.config;
 
-import cn.sx.ebj.bidding.common.core.Result;
-import cn.sx.ebj.bidding.common.enums.BizMsgType;
-import cn.sx.ebj.bidding.common.exception.BizException;
+import cn.sx.ebj.bidding.core.base.Result;
+import cn.sx.ebj.bidding.core.enums.BizMsgType;
+import cn.sx.ebj.bidding.core.exception.BizException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.DefaultMessageSourceResolvable;

@@ -1,9 +1,9 @@
 package cn.sx.ebj.bidding.web.controller;
 
-import cn.sx.ebj.bidding.common.core.IController;
-import cn.sx.ebj.bidding.common.core.Result;
+import cn.sx.ebj.bidding.core.base.IController;
+import cn.sx.ebj.bidding.core.base.Result;
 import cn.sx.ebj.bidding.web.model.LoginDto;
-import cn.sx.ebj.bidding.web.service.IUserFace;
+import cn.sx.ebj.bidding.web.face.IUserFace;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;

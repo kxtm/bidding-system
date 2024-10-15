@@ -1,7 +1,7 @@
 package cn.sx.ebj.bidding.web.controller;
 
-import cn.sx.ebj.bidding.common.core.IController;
-import cn.sx.ebj.bidding.common.core.Result;
+import cn.sx.ebj.bidding.core.base.IController;
+import cn.sx.ebj.bidding.core.base.Result;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

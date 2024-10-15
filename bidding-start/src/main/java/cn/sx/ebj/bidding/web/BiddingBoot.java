@@ -6,8 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "com.chunjies")
-@MapperScan(value = "com.chunjies.bidding.data.dao")
+@MapperScan(value = "cn.sx.ebj.bidding.data.dao")
 public class BiddingBoot {
     public static void main(String[] args) {
         SpringApplication.run(BiddingBoot.class, args);
