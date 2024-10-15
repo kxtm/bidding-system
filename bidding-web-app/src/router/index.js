@@ -5,7 +5,7 @@ const router = createRouter({
     routes: [
         {
             path: '/',
-            component: () => import('@/views/HomeView.vue'),
+            component: () => import('@/components/Layout.vue'),
         },
         {
             path: '/login',
@@ -14,23 +14,24 @@ const router = createRouter({
         },
         {
             path: '/about',
-            name: 'about',
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
-            component: () => import('../views/AboutView.vue')
+            component: () => import('@/components/Layout.vue'),
+            children:[{
+                path:"/about/index",
+                component:()=>import('@/views/AboutView.vue')
+            }]
         }
     ]
 })
 
 router.beforeEach((to, from, next) => {
-    if (to.path !== "/login") {
-        router.push("/login").then(r => {
-          console.log(from.fullPath)
-        });
-    } else {
-        next()
-    }
+    // if (to.path !== "/login") {
+    //     router.push("/login").then(r => {
+    //       console.log(from.fullPath)
+    //     });
+    // } else {
+    //     next()
+    // }
+    next()
 
 })
 export default router

@@ -11,10 +11,9 @@
     <modules>
         <module>bidding-start</module>
         <module>bidding-core</module>
-        <module>bidding-external</module>
-        <module>bidding-job</module>
+        <module>bidding-extend</module>
     </modules>
-    <groupId>com.chunjies.bidding</groupId>
+    <groupId>cn.sx.ebj.bidding</groupId>
     <artifactId>bidding-system</artifactId>
     <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
@@ -25,7 +24,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring.version>5.3.34</spring.version>
+        <spring.version>5.3.39</spring.version>
         <logback.version>1.2.13</logback.version>
     </properties>
     <dependencies>
@@ -50,11 +49,6 @@
             <groupId>com.mysql</groupId>
             <artifactId>mysql-connector-j</artifactId>
             <version>8.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.auth0</groupId>
-            <artifactId>java-jwt</artifactId>
-            <version>4.4.0</version>
         </dependency>
         <dependency>
             <groupId>org.yaml</groupId>

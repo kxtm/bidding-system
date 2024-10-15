@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.chunjies.bidding.data.dao.OrgMapper" >
-  <resultMap id="BaseResultMap" type="com.chunjies.bidding.data.entity.Org" >
+<mapper namespace="cn.sx.ebj.bidding.data.dao.OrgMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.data.entity.Org" >
     <id column="ID" property="id" jdbcType="BIGINT" />
     <result column="ORG_ID" property="orgId" jdbcType="VARCHAR" />
     <result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" />
@@ -42,7 +42,7 @@
   <delete id="deleteByOrgId" parameterType="java.lang.String" >
     delete from sys_org  where ORG_ID = #{orgId,jdbcType=VARCHAR}
   </delete>
-  <insert id="insert" parameterType="com.chunjies.bidding.data.entity.Org" >
+  <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
     insert into sys_org
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="orgId != null" >
@@ -205,7 +205,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByOrgId" parameterType="com.chunjies.bidding.data.entity.Org" >
+  <update id="updateByOrgId" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
     update sys_org
     <set >
       <if test="orgId != null" >
