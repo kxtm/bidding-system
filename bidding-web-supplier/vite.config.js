@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base:'/bidding-supplier',
+  base:'/bidding-supplier/',
   plugins: [
     vue(),
   ],
