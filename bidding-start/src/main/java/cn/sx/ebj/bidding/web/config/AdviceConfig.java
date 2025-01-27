@@ -3,6 +3,9 @@ package cn.sx.ebj.bidding.web.config;
 import cn.sx.ebj.bidding.core.base.Result;
 import cn.sx.ebj.bidding.core.enums.BizMsgType;
 import cn.sx.ebj.bidding.core.exception.BizException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -15,9 +18,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.NoHandlerFoundException;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.validation.ConstraintViolation;
-import javax.validation.ConstraintViolationException;
+
 import java.util.List;
 import java.util.stream.Collectors;
 

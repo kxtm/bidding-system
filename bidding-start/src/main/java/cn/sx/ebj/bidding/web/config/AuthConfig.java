@@ -1,9 +1,10 @@
 package cn.sx.ebj.bidding.web.config;
 
+import org.springframework.lang.Nullable;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 /**
  * @name: 拦截器
@@ -13,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 public class AuthConfig implements HandlerInterceptor {
 
     @Override
-    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    public boolean preHandle(@Nullable HttpServletRequest request, @Nullable HttpServletResponse response, @Nullable Object handler) throws Exception {
         return true;
     }
 }

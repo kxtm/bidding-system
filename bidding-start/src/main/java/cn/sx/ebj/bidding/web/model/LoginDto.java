@@ -1,9 +1,9 @@
 package cn.sx.ebj.bidding.web.model;
 
 import cn.sx.ebj.bidding.core.consts.Constr;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
 
 public class LoginDto {
 

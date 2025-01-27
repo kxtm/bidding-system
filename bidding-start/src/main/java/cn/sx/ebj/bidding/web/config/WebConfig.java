@@ -1,5 +1,7 @@
 package cn.sx.ebj.bidding.web.config;
 
+import jakarta.validation.Validation;
+import jakarta.validation.Validator;
 import org.hibernate.validator.HibernateValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,8 +11,6 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-import javax.validation.Validation;
-import javax.validation.Validator;
 
 /**
  * @name: WebConfig

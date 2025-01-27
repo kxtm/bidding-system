@@ -3,6 +3,7 @@ package cn.sx.ebj.bidding.core.aspect;
 import cn.sx.ebj.bidding.core.annotation.SysLog;
 import cn.sx.ebj.bidding.core.utils.IPUtil;
 import cn.sx.ebj.bidding.core.utils.JSONUtil;
+import jakarta.servlet.http.HttpServletRequest;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -15,7 +16,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 
 @Aspect
 @Component
