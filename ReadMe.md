@@ -12,5 +12,10 @@
 * bidding-web-market  集采服务商城模块
 * bidding-web-tender 集采开评标模块
 
-
-
+### 演示地址
+#### 采购系统演示地址
+* https://dev.ebj.sx.cn/bidding-system/
+#### 采购商城演示地址
+* https://dev.ebj.sx.cn/bidding-market/
+#### 采购门户演示地址
+* https://dev.ebj.sx.cn/bidding-supplier/
