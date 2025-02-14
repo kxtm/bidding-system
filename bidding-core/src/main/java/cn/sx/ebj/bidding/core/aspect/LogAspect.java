@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.core.aspect;
 
-import cn.sx.ebj.bidding.core.annotation.SysLog;
+import cn.sx.ebj.bidding.core.annotations.SysLog;
 import cn.sx.ebj.bidding.core.utils.IPUtil;
 import cn.sx.ebj.bidding.core.utils.JSONUtil;
 import jakarta.servlet.http.HttpServletRequest;

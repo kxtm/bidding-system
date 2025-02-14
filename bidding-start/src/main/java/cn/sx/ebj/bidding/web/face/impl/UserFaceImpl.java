@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.web.face.impl;
 
-import cn.sx.ebj.bidding.core.annotation.SysLog;
+import cn.sx.ebj.bidding.core.annotations.SysLog;
 import cn.sx.ebj.bidding.core.enums.ModuleType;
 import cn.sx.ebj.bidding.core.enums.OperType;
 import cn.sx.ebj.bidding.data.dao.UserMapper;

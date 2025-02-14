@@ -2,9 +2,8 @@ package cn.sx.ebj.bidding.web.config;
 
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
 import org.hibernate.validator.HibernateValidator;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  **/
 @Configuration
 public class WebConfig implements WebMvcConfigurer {
-    static Logger log = LoggerFactory.getLogger(WebConfig.class);
 
     @Bean
     public AuthConfig securityCfg() {
@@ -38,9 +36,13 @@ public class WebConfig implements WebMvcConfigurer {
         WebMvcConfigurer.super.addInterceptors(registry);
     }
 
+    @Bean
+    public ValidatorFactory validatorFactory() {
+        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory();
+    }
 
     @Bean
-    public Validator validator() {
-        return Validation.byProvider(HibernateValidator.class).configure().failFast(true).buildValidatorFactory().getValidator();
+    public Validator validator(ValidatorFactory validatorFactory) {
+        return validatorFactory.getValidator();
     }
 }

@@ -1,4 +1,4 @@
-package cn.sx.ebj.bidding.core.annotation;
+package cn.sx.ebj.bidding.core.annotations;
 
 import cn.sx.ebj.bidding.core.enums.ModuleType;
 import cn.sx.ebj.bidding.core.enums.OperType;

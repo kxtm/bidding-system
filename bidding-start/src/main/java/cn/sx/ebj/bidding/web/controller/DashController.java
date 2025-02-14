@@ -1,6 +1,6 @@
 package cn.sx.ebj.bidding.web.controller;
 
-import cn.sx.ebj.bidding.core.annotation.SysLog;
+import cn.sx.ebj.bidding.core.annotations.SysLog;
 import cn.sx.ebj.bidding.core.base.IController;
 import cn.sx.ebj.bidding.core.base.Result;
 import cn.sx.ebj.bidding.core.enums.ModuleType;
