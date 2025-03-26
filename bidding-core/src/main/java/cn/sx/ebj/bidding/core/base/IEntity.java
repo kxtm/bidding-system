@@ -1,5 +1,6 @@
 package cn.sx.ebj.bidding.core.base;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -7,6 +8,7 @@ import java.util.Date;
  * 实体基类
  */
 public class IEntity implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     //序号主键
     private Long id;
