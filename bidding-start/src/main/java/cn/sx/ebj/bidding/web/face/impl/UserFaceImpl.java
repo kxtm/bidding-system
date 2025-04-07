@@ -24,9 +24,10 @@ public class UserFaceImpl implements IUserFace {
     @Override
     @SysLog(module = ModuleType.CGGL,func ="getUserByName" ,desc = "用户名查询用户", type = OperType.QUERY)
     public LoginDto getUserByName(String name) {
-        LoginDto dto=new LoginDto();
-        dto.setLoginName("aaa");
-       return  dto;
+        throw new RuntimeException("2222222");
+        //LoginDto dto=new LoginDto();
+      //  dto.setLoginName("aaa");
+      // return  dto;
     }
 
     @Autowired

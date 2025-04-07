@@ -2,15 +2,14 @@ package cn.sx.ebj.bidding.web.controller;
 
 import cn.sx.ebj.bidding.core.base.IController;
 import cn.sx.ebj.bidding.core.base.Result;
-import cn.sx.ebj.bidding.web.model.LoginDto;
 import cn.sx.ebj.bidding.web.face.IUserFace;
+import cn.sx.ebj.bidding.web.model.LoginDto;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 
 
 /**
@@ -33,6 +32,8 @@ public class AuthController extends IController {
 
     @GetMapping("/test")
     public Result<String> test() {
+       // throw new RuntimeException("test");
+
         LoginDto loginDto = userFace.getUserByName("11");
         return Result.error(loginDto.getLoginName());
     }
