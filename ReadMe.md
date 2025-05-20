@@ -14,8 +14,8 @@
 
 ### 演示地址
 #### 采购系统演示地址
-* https://dev.ebj.sx.cn/bidding-system/
+* https://app.team.ebj.sx.cn/bidding-system/
 #### 采购商城演示地址
-* https://dev.ebj.sx.cn/bidding-market/
+* https://app.team.ebj.sx.cn/bidding-market/
 #### 采购门户演示地址
-* https://dev.ebj.sx.cn/bidding-supplier/
+* https://app.team.ebj.sx.cn/bidding-supplier/
