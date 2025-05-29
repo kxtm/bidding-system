@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sx.ebj.bidding.data.dao.OrgMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.data.entity.Org" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="ORG_ID" property="orgId" jdbcType="VARCHAR" />
+    <result column="ORG_CODE" property="orgCode" jdbcType="VARCHAR" />
+    <result column="ORG_NAME" property="orgName" jdbcType="VARCHAR" />
+    <result column="ORG_SHORT_NAME" property="orgShortName" jdbcType="VARCHAR" />
+    <result column="ORG_PARENT_ID" property="orgParentId" jdbcType="VARCHAR" />
+    <result column="ORG_TYPE" property="orgType" jdbcType="INTEGER" />
+    <result column="ORG_LEVEL" property="orgLevel" jdbcType="INTEGER" />
+    <result column="ORG_SORT" property="orgSort" jdbcType="INTEGER" />
+    <result column="ORG_STATUS" property="orgStatus" jdbcType="INTEGER" />
+    <result column="Remark" property="remark" jdbcType="VARCHAR" />
+    <result column="ORG_CORP_ID" property="orgCorpId" jdbcType="VARCHAR" />
+    <result column="ORG_CORP_NAME" property="orgCorpName" jdbcType="VARCHAR" />
+    <result column="ORG_BRANCH_ID" property="orgBranchId" jdbcType="VARCHAR" />
+    <result column="ORG_BRANCH_NAME" property="orgBranchName" jdbcType="VARCHAR" />
+    <result column="ORG_CITY_ID" property="orgCityId" jdbcType="VARCHAR" />
+    <result column="ORG_CITY_NAME" property="orgCityName" jdbcType="VARCHAR" />
+    <result column="ORG_County_ID" property="orgCountyId" jdbcType="VARCHAR" />
+    <result column="ORG_County_name" property="orgCountyName" jdbcType="VARCHAR" />
+    <result column="ORG_SEQ" property="orgSeq" jdbcType="VARCHAR" />
+    <result column="ORG_SEQ_CH" property="orgSeqCh" jdbcType="VARCHAR" />
+    <result column="Create_Pk" property="createPk" jdbcType="VARCHAR" />
+    <result column="Create_By" property="createBy" jdbcType="VARCHAR" />
+    <result column="Modify_Pk" property="modifyPk" jdbcType="VARCHAR" />
+    <result column="Modify_By" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="Create_Time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="Modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, ORG_ID, ORG_CODE, ORG_NAME, ORG_SHORT_NAME, ORG_PARENT_ID, ORG_TYPE, ORG_LEVEL, 
+    ORG_SORT, ORG_STATUS, Remark, ORG_CORP_ID, ORG_CORP_NAME, ORG_BRANCH_ID, ORG_BRANCH_NAME, 
+    ORG_CITY_ID, ORG_CITY_NAME, ORG_County_ID, ORG_County_name, ORG_SEQ, ORG_SEQ_CH, 
+    Create_Pk, Create_By, Modify_Pk, Modify_By, Create_Time, Modify_Time
+  </sql>
+  <select id="selectByOrgId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select  <include refid="Base_Column_List" />  from sys_org  where ORG_ID = #{orgId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByOrgId" parameterType="java.lang.String" >
+    delete from sys_org  where ORG_ID = #{orgId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
+    insert into sys_org
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orgId != null" >
+        ORG_ID,
+      </if>
+      <if test="orgCode != null" >
+        ORG_CODE,
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME,
+      </if>
+      <if test="orgShortName != null" >
+        ORG_SHORT_NAME,
+      </if>
+      <if test="orgParentId != null" >
+        ORG_PARENT_ID,
+      </if>
+      <if test="orgType != null" >
+        ORG_TYPE,
+      </if>
+      <if test="orgLevel != null" >
+        ORG_LEVEL,
+      </if>
+      <if test="orgSort != null" >
+        ORG_SORT,
+      </if>
+      <if test="orgStatus != null" >
+        ORG_STATUS,
+      </if>
+      <if test="remark != null" >
+        Remark,
+      </if>
+      <if test="orgCorpId != null" >
+        ORG_CORP_ID,
+      </if>
+      <if test="orgCorpName != null" >
+        ORG_CORP_NAME,
+      </if>
+      <if test="orgBranchId != null" >
+        ORG_BRANCH_ID,
+      </if>
+      <if test="orgBranchName != null" >
+        ORG_BRANCH_NAME,
+      </if>
+      <if test="orgCityId != null" >
+        ORG_CITY_ID,
+      </if>
+      <if test="orgCityName != null" >
+        ORG_CITY_NAME,
+      </if>
+      <if test="orgCountyId != null" >
+        ORG_County_ID,
+      </if>
+      <if test="orgCountyName != null" >
+        ORG_County_name,
+      </if>
+      <if test="orgSeq != null" >
+        ORG_SEQ,
+      </if>
+      <if test="orgSeqCh != null" >
+        ORG_SEQ_CH,
+      </if>
+      <if test="createPk != null" >
+        Create_Pk,
+      </if>
+      <if test="createBy != null" >
+        Create_By,
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk,
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By,
+      </if>
+      <if test="createTime != null" >
+        Create_Time,
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgShortName != null" >
+        #{orgShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgParentId != null" >
+        #{orgParentId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgType != null" >
+        #{orgType,jdbcType=INTEGER},
+      </if>
+      <if test="orgLevel != null" >
+        #{orgLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orgSort != null" >
+        #{orgSort,jdbcType=INTEGER},
+      </if>
+      <if test="orgStatus != null" >
+        #{orgStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCorpId != null" >
+        #{orgCorpId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCorpName != null" >
+        #{orgCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBranchId != null" >
+        #{orgBranchId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBranchName != null" >
+        #{orgBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCityId != null" >
+        #{orgCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCityName != null" >
+        #{orgCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCountyId != null" >
+        #{orgCountyId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCountyName != null" >
+        #{orgCountyName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeq != null" >
+        #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCh != null" >
+        #{orgSeqCh,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByOrgId" parameterType="cn.sx.ebj.bidding.data.entity.Org" >
+    update sys_org
+    <set >
+      <if test="orgId != null" >
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCode != null" >
+        ORG_CODE = #{orgCode,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        ORG_NAME = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgShortName != null" >
+        ORG_SHORT_NAME = #{orgShortName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgParentId != null" >
+        ORG_PARENT_ID = #{orgParentId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgType != null" >
+        ORG_TYPE = #{orgType,jdbcType=INTEGER},
+      </if>
+      <if test="orgLevel != null" >
+        ORG_LEVEL = #{orgLevel,jdbcType=INTEGER},
+      </if>
+      <if test="orgSort != null" >
+        ORG_SORT = #{orgSort,jdbcType=INTEGER},
+      </if>
+      <if test="orgStatus != null" >
+        ORG_STATUS = #{orgStatus,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        Remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCorpId != null" >
+        ORG_CORP_ID = #{orgCorpId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCorpName != null" >
+        ORG_CORP_NAME = #{orgCorpName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBranchId != null" >
+        ORG_BRANCH_ID = #{orgBranchId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgBranchName != null" >
+        ORG_BRANCH_NAME = #{orgBranchName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCityId != null" >
+        ORG_CITY_ID = #{orgCityId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCityName != null" >
+        ORG_CITY_NAME = #{orgCityName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCountyId != null" >
+        ORG_County_ID = #{orgCountyId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgCountyName != null" >
+        ORG_County_name = #{orgCountyName,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeq != null" >
+        ORG_SEQ = #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCh != null" >
+        ORG_SEQ_CH = #{orgSeqCh,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        Create_Pk = #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        Create_By = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By = #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        Create_Time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ORG_ID = #{orgId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

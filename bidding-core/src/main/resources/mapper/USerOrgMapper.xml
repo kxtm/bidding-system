@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sx.ebj.bidding.data.dao.USerOrgMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.data.entity.USerOrg" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="EMP_ID" property="empId" jdbcType="VARCHAR" />
+    <result column="ORG_ID" property="orgId" jdbcType="VARCHAR" />
+    <result column="ORG_Name" property="orgName" jdbcType="VARCHAR" />
+    <result column="USE_TYPE" property="useType" jdbcType="INTEGER" />
+    <result column="USE_STATE" property="useState" jdbcType="INTEGER" />
+    <result column="ORG_SEQ" property="orgSeq" jdbcType="VARCHAR" />
+    <result column="ORG_SEQ_CH" property="orgSeqCh" jdbcType="VARCHAR" />
+    <result column="Create_Pk" property="createPk" jdbcType="VARCHAR" />
+    <result column="Create_By" property="createBy" jdbcType="VARCHAR" />
+    <result column="Modify_Pk" property="modifyPk" jdbcType="VARCHAR" />
+    <result column="Modify_By" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="Create_Time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="Modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, EMP_ID, ORG_ID, ORG_Name, USE_TYPE, USE_STATE, ORG_SEQ, ORG_SEQ_CH, Create_Pk, 
+    Create_By, Modify_Pk, Modify_By, Create_Time, Modify_Time
+  </sql>
+  <select id="selectByEmpId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from sys_user_org  where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByEmpId" parameterType="java.lang.String" >
+    delete from sys_user_org where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
+    insert into sys_user_org
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+
+      <if test="empId != null" >
+        EMP_ID,
+      </if>
+      <if test="orgId != null" >
+        ORG_ID,
+      </if>
+      <if test="orgName != null" >
+        ORG_Name,
+      </if>
+      <if test="useType != null" >
+        USE_TYPE,
+      </if>
+      <if test="useState != null" >
+        USE_STATE,
+      </if>
+      <if test="orgSeq != null" >
+        ORG_SEQ,
+      </if>
+      <if test="orgSeqCh != null" >
+        ORG_SEQ_CH,
+      </if>
+      <if test="createPk != null" >
+        Create_Pk,
+      </if>
+      <if test="createBy != null" >
+        Create_By,
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk,
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By,
+      </if>
+      <if test="createTime != null" >
+        Create_Time,
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="empId != null" >
+        #{empId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgId != null" >
+        #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null" >
+        #{useType,jdbcType=INTEGER},
+      </if>
+      <if test="useState != null" >
+        #{useState,jdbcType=INTEGER},
+      </if>
+      <if test="orgSeq != null" >
+        #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCh != null" >
+        #{orgSeqCh,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByEmpId" parameterType="cn.sx.ebj.bidding.data.entity.USerOrg" >
+    update sys_user_org
+    <set >
+      <if test="orgId != null" >
+        ORG_ID = #{orgId,jdbcType=VARCHAR},
+      </if>
+      <if test="orgName != null" >
+        ORG_Name = #{orgName,jdbcType=VARCHAR},
+      </if>
+      <if test="useType != null" >
+        USE_TYPE = #{useType,jdbcType=INTEGER},
+      </if>
+      <if test="useState != null" >
+        USE_STATE = #{useState,jdbcType=INTEGER},
+      </if>
+      <if test="orgSeq != null" >
+        ORG_SEQ = #{orgSeq,jdbcType=VARCHAR},
+      </if>
+      <if test="orgSeqCh != null" >
+        ORG_SEQ_CH = #{orgSeqCh,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        Create_Pk = #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        Create_By = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By = #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        Create_Time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </update>
+
+</mapper>

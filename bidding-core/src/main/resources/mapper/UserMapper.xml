@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sx.ebj.bidding.data.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.sx.ebj.bidding.data.entity.User" >
+    <id column="ID" property="id" jdbcType="BIGINT" />
+    <result column="EMP_ID" property="empId" jdbcType="VARCHAR" />
+    <result column="EMP_Code" property="empCode" jdbcType="VARCHAR" />
+    <result column="EMP_Name" property="empName" jdbcType="VARCHAR" />
+    <result column="EMP_Pwd" property="empPwd" jdbcType="VARCHAR" />
+    <result column="EMP_Sex" property="empSex" jdbcType="INTEGER" />
+    <result column="EMP_level" property="empLevel" jdbcType="INTEGER" />
+    <result column="EMP_type" property="empType" jdbcType="INTEGER" />
+    <result column="EMP_mobile" property="empMobile" jdbcType="VARCHAR" />
+    <result column="EMP_phone" property="empPhone" jdbcType="VARCHAR" />
+    <result column="EMP_email" property="empEmail" jdbcType="VARCHAR" />
+    <result column="EMP_State" property="empState" jdbcType="INTEGER" />
+    <result column="EMP_Sort" property="empSort" jdbcType="INTEGER" />
+    <result column="OPER_TYPE" property="operType" jdbcType="INTEGER" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+    <result column="Create_Pk" property="createPk" jdbcType="VARCHAR" />
+    <result column="Create_By" property="createBy" jdbcType="VARCHAR" />
+    <result column="Modify_Pk" property="modifyPk" jdbcType="VARCHAR" />
+    <result column="Modify_By" property="modifyBy" jdbcType="VARCHAR" />
+    <result column="Create_Time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="Modify_Time" property="modifyTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    ID, EMP_ID, EMP_Code, EMP_Name, EMP_Pwd, EMP_Sex, EMP_level, EMP_type, EMP_mobile, 
+    EMP_phone, EMP_email, EMP_State, EMP_Sort, OPER_TYPE, REMARK, Create_Pk, Create_By, 
+    Modify_Pk, Modify_By, Create_Time, Modify_Time
+  </sql>
+  <select id="selectByEmpId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select <include refid="Base_Column_List" /> from sys_user  where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByEmpId" parameterType="java.lang.Long" >
+    delete from sys_user where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.sx.ebj.bidding.data.entity.User" >
+    insert into sys_user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="empId != null" >
+        EMP_ID,
+      </if>
+      <if test="empCode != null" >
+        EMP_Code,
+      </if>
+      <if test="empName != null" >
+        EMP_Name,
+      </if>
+      <if test="empPwd != null" >
+        EMP_Pwd,
+      </if>
+      <if test="empSex != null" >
+        EMP_Sex,
+      </if>
+      <if test="empLevel != null" >
+        EMP_level,
+      </if>
+      <if test="empType != null" >
+        EMP_type,
+      </if>
+      <if test="empMobile != null" >
+        EMP_mobile,
+      </if>
+      <if test="empPhone != null" >
+        EMP_phone,
+      </if>
+      <if test="empEmail != null" >
+        EMP_email,
+      </if>
+      <if test="empState != null" >
+        EMP_State,
+      </if>
+      <if test="empSort != null" >
+        EMP_Sort,
+      </if>
+      <if test="operType != null" >
+        OPER_TYPE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+      <if test="createPk != null" >
+        Create_Pk,
+      </if>
+      <if test="createBy != null" >
+        Create_By,
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk,
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By,
+      </if>
+      <if test="createTime != null" >
+        Create_Time,
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="empId != null" >
+        #{empId,jdbcType=VARCHAR},
+      </if>
+      <if test="empCode != null" >
+        #{empCode,jdbcType=VARCHAR},
+      </if>
+      <if test="empName != null" >
+        #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="empPwd != null" >
+        #{empPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="empSex != null" >
+        #{empSex,jdbcType=INTEGER},
+      </if>
+      <if test="empLevel != null" >
+        #{empLevel,jdbcType=INTEGER},
+      </if>
+      <if test="empType != null" >
+        #{empType,jdbcType=INTEGER},
+      </if>
+      <if test="empMobile != null" >
+        #{empMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="empPhone != null" >
+        #{empPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="empEmail != null" >
+        #{empEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="empState != null" >
+        #{empState,jdbcType=INTEGER},
+      </if>
+      <if test="empSort != null" >
+        #{empSort,jdbcType=INTEGER},
+      </if>
+      <if test="operType != null" >
+        #{operType,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByEmpId" parameterType="cn.sx.ebj.bidding.data.entity.User" >
+    update sys_user
+    <set >
+      <if test="empId != null" >
+        EMP_ID = #{empId,jdbcType=VARCHAR},
+      </if>
+      <if test="empCode != null" >
+        EMP_Code = #{empCode,jdbcType=VARCHAR},
+      </if>
+      <if test="empName != null" >
+        EMP_Name = #{empName,jdbcType=VARCHAR},
+      </if>
+      <if test="empPwd != null" >
+        EMP_Pwd = #{empPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="empSex != null" >
+        EMP_Sex = #{empSex,jdbcType=INTEGER},
+      </if>
+      <if test="empLevel != null" >
+        EMP_level = #{empLevel,jdbcType=INTEGER},
+      </if>
+      <if test="empType != null" >
+        EMP_type = #{empType,jdbcType=INTEGER},
+      </if>
+      <if test="empMobile != null" >
+        EMP_mobile = #{empMobile,jdbcType=VARCHAR},
+      </if>
+      <if test="empPhone != null" >
+        EMP_phone = #{empPhone,jdbcType=VARCHAR},
+      </if>
+      <if test="empEmail != null" >
+        EMP_email = #{empEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="empState != null" >
+        EMP_State = #{empState,jdbcType=INTEGER},
+      </if>
+      <if test="empSort != null" >
+        EMP_Sort = #{empSort,jdbcType=INTEGER},
+      </if>
+      <if test="operType != null" >
+        OPER_TYPE = #{operType,jdbcType=INTEGER},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createPk != null" >
+        Create_Pk = #{createPk,jdbcType=VARCHAR},
+      </if>
+      <if test="createBy != null" >
+        Create_By = #{createBy,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyPk != null" >
+        Modify_Pk = #{modifyPk,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyBy != null" >
+        Modify_By = #{modifyBy,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        Create_Time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null" >
+        Modify_Time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EMP_ID = #{empId,jdbcType=VARCHAR}
+  </update>
+</mapper>
